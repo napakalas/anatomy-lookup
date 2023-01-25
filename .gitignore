@@ -135,3 +135,6 @@ dmypy.json
 
 # Large file
 onto_embs.pt
+
+# Retain folder
+!anatomy_lookup/resources/.gitkeep

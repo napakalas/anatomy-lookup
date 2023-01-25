@@ -5,7 +5,7 @@ from sentence_transformers import SentenceTransformer, util
 import torch
 
 class AnatomyLookup:
-    embs_file = os.path.join(os.path.dirname(os.path.realpath(__file__)), '../resources/onto_embs.pt')
+    embs_file = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'resources/onto_embs.pt')
     def __init__(self):
         self.model = SentenceTransformer('multi-qa-MiniLM-L6-cos-v1')
 
