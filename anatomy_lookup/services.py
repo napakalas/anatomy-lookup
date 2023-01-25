@@ -5,12 +5,16 @@ from sentence_transformers import SentenceTransformer, util
 import torch
 
 class AnatomyLookup:
-    embs_file = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'resources/onto_embs.pt')
+    embs_folder = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'resources')
+    embs_file = os.path.join(embs_folder, 'onto_embs.pt')
     def __init__(self):
         self.model = SentenceTransformer('multi-qa-MiniLM-L6-cos-v1')
 
         # checking if the term embeddings available
         if not os.path.exists(AnatomyLookup.embs_file):
+            # creating folder if not available
+            if not os.path.exists(AnatomyLookup.embs_folder):
+                os.mkdir(AnatomyLookup.embs_folder)
             # download term embeddings
             logging.warning("Term embeddings are not available.")
             AnatomyLookup.update_terms()
