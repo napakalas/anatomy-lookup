@@ -22,7 +22,7 @@ results
 
 ### Update UBERON and ILX terms
 ```python
-AnatomyLookup.update_terms()
+al.update_terms()
 ```
 
 ###  Rebuild term embedding

@@ -9,7 +9,7 @@ class AnatomyLookup:
     embs_file = os.path.join(embs_folder, 'onto_embs.pt')
     def __init__(self):
         self.model = SentenceTransformer('multi-qa-MiniLM-L6-cos-v1')
-
+        
         # checking if the term embeddings available
         if not os.path.exists(AnatomyLookup.embs_file):
             # creating folder if not available
@@ -17,9 +17,12 @@ class AnatomyLookup:
                 os.mkdir(AnatomyLookup.embs_folder)
             # download term embeddings
             logging.warning("Term embeddings are not available.")
-            AnatomyLookup.update_terms()
+            self.update_terms()
 
         # loading term embeddings
+        self.__load_embedding_file()
+
+    def __load_embedding_file(self):
         self.onto_ids, self.onto_terms, self.onto_labels, self.onto_embs = torch.load(AnatomyLookup.embs_file)
 
     def build_indexes(self, file_path:str):
@@ -28,7 +31,8 @@ class AnatomyLookup:
         file_path = a ttl file path or a directory containing ttl files
         The files can be obtained from https://github.com/SciCrunch/NIF-Ontology/releases
         """
-        from rdflib import Graph
+        import rdflib
+        import re
         # getting all ttl files
         filenames = []
         if os.path.isfile(file_path):
@@ -42,20 +46,34 @@ class AnatomyLookup:
             return
 
         # parsing all ttl files
-        g = Graph()
+        g = rdflib.Graph()
         for filename in tqdm(filenames):
             g.parse(filename)
 
-        # getting UBERON and ILX terms
+        # getting UBERON and ILX terms with label predicate
         onto_ids = []
         onto_terms = []
         onto_labels = {}
-        for s, p, o in tqdm(g):
-            if ('UBERON' in s or 'ilx_' in s) and ('label' in p.casefold() or 'synonym' in p.casefold()):
+        p_label = 'http://www.w3.org/2000/01/rdf-schema#label'
+        for s, o in tqdm(g.subject_objects(rdflib.util.URIRef(p_label))):
+            if ('UBERON' in s or 'ilx_' in s):
                 onto_ids += [str(s)]
-                onto_terms += [str(o)]
-                if 'label' in p.casefold():
-                    onto_labels[str(s)] = str(o)
+                onto_terms +=  [str(o)]
+                onto_labels[str(s)] = str(o)
+
+        # getting terms from synonym type predicate
+        p_synonyms = ['http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym',
+              'http://www.geneontology.org/formats/oboInOwl#hasExactSynonym',
+              'http://uri.neuinfo.org/nif/nifstd/readable/synonym',
+              'http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym',
+              'http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym',
+             ]
+        for p in p_synonyms:
+            for s, o in tqdm(g.subject_objects(rdflib.util.URIRef(p))):
+                if ('UBERON' in s or 'ilx_' in s):
+                    pred = re.sub('([A-Z])', r' \1', str(p).split('#')[-1].split('/')[-1]).lower()
+                    onto_ids += [str(s)]
+                    onto_terms += [onto_labels[str(s)] + ' ' + (pred+' ' if pred != 'label' else '') + str(o)]
 
         # generating term embeddings
         onto_embs = self.model.encode(onto_terms, show_progress_bar=True, convert_to_tensor=True)
@@ -64,12 +82,28 @@ class AnatomyLookup:
         data_embds = (onto_ids, onto_terms, onto_labels, onto_embs)
         torch.save(data_embds, AnatomyLookup.embs_file)
 
-    def update_terms():
+        # loading term embeddings
+        self.__load_embedding_file()
+
+    def update_terms(self):
         import requests
+        import json
+
+        # get newest download link
+        article_id = '21952595'
+        url = 'https://api.figshare.com/v2/articles/{}/files'.format(article_id)
+        headers = {'Content-Type': 'application/json'}
+        response = requests.request('GET', url, headers=headers)
+        file_url = json.loads(response.text)[0]['download_url']
+
+        # downloading the file
         logging.warning("... downloading from server")
-        r = requests.get('https://auckland.figshare.com/ndownloader/files/38944175')
+        r = requests.get(file_url)
         with open(AnatomyLookup.embs_file, 'wb') as f:
             f.write(r.content)
+        
+        # loading term embeddings
+        self.__load_embedding_file()
 
     def search(self, query:str):
         query_emb = self.model.encode(query, convert_to_tensor=True)
