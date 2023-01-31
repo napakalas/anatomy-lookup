@@ -25,6 +25,11 @@ results
 al.update_terms()
 ```
 
+### Close instance to free resource
+```python
+al.close()
+```
+
 ###  Rebuild term embedding
 ```python
 al.build_indexes('path to ttl files')
