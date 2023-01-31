@@ -8,8 +8,8 @@ class AnatomyLookup:
     embs_folder = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'resources')
     embs_file = os.path.join(embs_folder, 'onto_embs.pt')
     def __init__(self):
+        os.environ["TOKENIZERS_PARALLELISM"] = "false"
         self.model = SentenceTransformer('multi-qa-MiniLM-L6-cos-v1')
-        
         # checking if the term embeddings available
         if not os.path.exists(AnatomyLookup.embs_file):
             # creating folder if not available
@@ -23,7 +23,7 @@ class AnatomyLookup:
         self.__load_embedding_file()
 
     def __load_embedding_file(self):
-        self.onto_ids, self.onto_terms, self.onto_labels, self.onto_embs = torch.load(AnatomyLookup.embs_file)
+        self.onto_ids, self.onto_labels, self.onto_embs = torch.load(AnatomyLookup.embs_file)
 
     def build_indexes(self, file_path:str):
         """
@@ -53,13 +53,18 @@ class AnatomyLookup:
         # getting UBERON and ILX terms with label predicate
         onto_ids = []
         onto_terms = []
+        onto_pos = {}
         onto_labels = {}
         p_label = 'http://www.w3.org/2000/01/rdf-schema#label'
         for s, o in tqdm(g.subject_objects(rdflib.util.URIRef(p_label))):
             if ('UBERON' in s or 'ilx_' in s):
+                onto_labels[str(s)] = str(o)
+                onto_pos[str(s)] = len(onto_ids)
                 onto_ids += [str(s)]
                 onto_terms +=  [str(o)]
-                onto_labels[str(s)] = str(o)
+
+        # generating label term embeddings
+        onto_embs = self.model.encode(onto_terms, show_progress_bar=True, convert_to_tensor=True)
 
         # getting terms from synonym type predicate
         p_synonyms = ['http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym',
@@ -68,18 +73,29 @@ class AnatomyLookup:
               'http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym',
               'http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym',
              ]
+        onto_terms_syn = []
+        onto_ids_syn = []
         for p in p_synonyms:
             for s, o in tqdm(g.subject_objects(rdflib.util.URIRef(p))):
                 if ('UBERON' in s or 'ilx_' in s):
                     pred = re.sub('([A-Z])', r' \1', str(p).split('#')[-1].split('/')[-1]).lower()
-                    onto_ids += [str(s)]
-                    onto_terms += [onto_labels[str(s)] + ' ' + (pred+' ' if pred != 'label' else '') + str(o)]
+                    onto_ids_syn += [str(s)]
+                    onto_terms_syn += [str(o)]
 
-        # generating term embeddings
-        onto_embs = self.model.encode(onto_terms, show_progress_bar=True, convert_to_tensor=True)
+        # generating synonym term embeddings
+        onto_embs_syn = self.model.encode(onto_terms_syn, show_progress_bar=True, convert_to_tensor=True)
+
+        # modify synonym term embeddings by adding with label term embeddings
+        for i, ids in enumerate(onto_ids_syn):
+            pos = onto_pos[ onto_ids_syn[i]]
+            onto_embs_syn[i]  += onto_embs[pos]
+
+        # combining synonym term embeddings to all embeddings
+        onto_embs = torch.cat([onto_embs,onto_embs_syn])
+        onto_ids += onto_ids_syn   
 
         # saving embeddings into a file
-        data_embds = (onto_ids, onto_terms, onto_labels, onto_embs)
+        data_embds = (onto_ids, onto_labels, onto_embs)
         torch.save(data_embds, AnatomyLookup.embs_file)
 
         # loading term embeddings
@@ -114,3 +130,7 @@ class AnatomyLookup:
         url = self.onto_ids[ids]
         return (url, self.onto_labels[url], score)
         
+    def close(self):
+        os.environ["TOKENIZERS_PARALLELISM"] = "false"
+        del self.model
+        return None
