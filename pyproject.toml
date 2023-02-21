@@ -5,6 +5,7 @@ description = "Anatomy lookup for UBERON and ILX"
 authors = ["Yuda Munarko <yuda.munarko@gmail.com>"]
 repository = "http://github.com/napakalas/anatomy-lookup"
 license = "GPL v.3"
+exclude = ["anatomy_lookup/resources/"]
 
 [tool.poetry.dependencies]
 python = ">=3.10,<4.0"
