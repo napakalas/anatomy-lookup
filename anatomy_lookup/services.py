@@ -629,7 +629,7 @@ class AnatomyAnnotator:
 
     def save_to_json(self, file_name):
         with open(file_name, 'w') as fp:
-            json.dump(self.__data, file_name)
+            json.dump(self.__data, fp)
 
     def get_results(self):
         return self.__data
