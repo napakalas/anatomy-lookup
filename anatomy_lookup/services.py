@@ -9,6 +9,8 @@ from rdflib.namespace import OWL
 import json
 import xlsxwriter
 
+from typing import Optional
+
 #===============================================================================
 
 RESOURCE_FOLDER = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'resources')
@@ -33,7 +35,7 @@ def get_uriref(uri_or_curie:str) -> rdflib.term.URIRef:
         if parts[0] in namespaces:
             return rdflib.term.URIRef(namespaces[parts[0]] + parts[1])
 
-def get_uri(curie_or_uriref) -> str:
+def get_uri(curie_or_uriref) -> Optional[str]:
     if str(curie_or_uriref).startswith('http'):
         return str(curie_or_uriref)
     elif ':' in curie_or_uriref:
@@ -41,7 +43,7 @@ def get_uri(curie_or_uriref) -> str:
         if parts[0] in namespaces:
             return namespaces[parts[0]] + parts[1]
 
-def get_curie(uri_or_uriref) -> str:
+def get_curie(uri_or_uriref) -> Optional[str]:
     uri = str(uri_or_uriref)
     for k, v in namespaces.items():
         if uri.startswith(v):
@@ -109,7 +111,7 @@ def __get_ttl(path):
                 other_files += [np]
     return [ttl_files, other_files]
 
-def get_SCKAN_graph(file_path:str=None):
+def get_SCKAN_graph(file_path: Optional[str]=None):
     
     import pickle            
     # checking ttl file availability
@@ -180,7 +182,7 @@ class AnatomyLookup:
         with open(AnatomyLookup.hierarchy_file, 'r') as fp:
             self.__onto_hierarchy = json.load(fp)
 
-    def build_indexes(self, file_path:str=None):
+    def build_indexes(self, file_path:Optional[str]=None):
         """
         Building UBERON and ILX term embedding
         file_path = directory containing ttl files, if none, will be downloaded from repository
@@ -346,7 +348,7 @@ class AnatomyLookup:
         # return emb
         return query_emb
         
-    def search_candidates(self, query:str, k:int, uri_candidates:list=None, force=False):
+    def search_candidates(self, query:str, k:int, uri_candidates:Optional[list]=None, force=False) -> list[tuple[str, str, float]]:
         """
         k -> the number of results returned, between 1 and 10
         """
@@ -357,7 +359,7 @@ class AnatomyLookup:
         
         cos_scores = util.cos_sim(query_emb, self.__onto_embs)[0]
         
-        k = k if len(uri_candidates) > k else len(uri_candidates)
+        k = k if len(uri_candidates) > k else len(uri_candidates)       # type: ignore
         k = 10 if k>10 else k
         top_results = torch.topk(cos_scores, k=100)
         
@@ -414,18 +416,18 @@ class AnatomyLookup:
         results = self.search_candidates(query, k=1, force=force)
         return results[0]
     
-    def search_with_scope(self, query:str, scope, k:int=5, treshold=0.8, force=False):
+    def search_with_scope(self, query:str, scope: str|list[str], k:int=5, threshold=0.8, force=False):
         if isinstance(scope, str):
             idx_scope, _, score_scope = self.search(scope)
-            if score_scope < treshold:
+            if score_scope < threshold:
                 logging.info("Scope is not available, the score lower than 0.8")
                 return []
             return self.search_candidates(query, k, list(self.get_descendant(idx_scope)), force=force)
         elif isinstance(scope, list):
             descendants = set()
             for sc in scope:
-                idx_scope, _, score_scope = self.search(scope)
-                if score_scope >= treshold:
+                idx_scope, _, score_scope = self.search(sc)
+                if score_scope >= threshold:
                     descendants.update(list(self.get_descendant(idx_scope)))
             if len(descendants) == 0:
                 logging.info("Scope is not available, the score lower than 0.8")
@@ -446,13 +448,13 @@ class AnatomyAnnotator:
         self.__lookup = AnatomyLookup()
         self.__data = {}
 
-    def annotate(self, data_file:dict, search_attr:str, scope_attrs:list, treshold=0.8, force=False):
+    def annotate(self, data_file:str, search_attr:str, scope_attrs:list, threshold=0.8, force=False):
         """
         A method to annotate data to ontology terms
-        data -> usually a json file containing systems, nerves, organs, and ftus
+        data_file -> usually a json file containing systems, nerves, organs, and ftus
         search_attr -> the attribute to be annotated
         scope_attrs -> list of attribute to limit annotation
-        treshold -> the minimum score to make sure the annotation is correct
+        threshold -> the minimum score to make sure the annotation is correct
         """
         with open(data_file, 'r') as fp:
             data = json.load(fp)
@@ -460,7 +462,7 @@ class AnatomyAnnotator:
         for group in data.values():
             for item in tqdm(group):
                 properties = self.__lookup.search(item[search_attr], force=force)
-                if properties[2] >= treshold:
+                if properties[2] >= threshold:
                     item['properties'] = {'models': get_curie(properties[0]),
                                           'label': properties[1],
                                           'confidence': properties[2]}
@@ -627,7 +629,7 @@ class AnatomyAnnotator:
 
     def save_to_json(self, file_name):
         with open(file_name, 'w') as fp:
-            json.dump(self.__data, file_name)
+            json.dump(self.__data, fp)
 
     def get_results(self):
         return self.__data

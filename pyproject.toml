@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "anatomy-lookup"
+version = "0.0.3"
+description = "Anatomy lookup for UBERON and ILX"
+authors = ["Yuda Munarko <yuda.munarko@gmail.com>"]
+repository = "http://github.com/napakalas/anatomy-lookup"
+license = "GPL v.3"
+exclude = ["anatomy_lookup/resources/"]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<4.0"
+torch = ">=1.13.0"
+sentence-transformers = ">=2.2.2"
+rdflib = "^6.2.0"
+requests = "^2.28.2"
+tqdm = "^4.64.1"
+xlsxwriter = "^3.0.8"
