@@ -517,10 +517,18 @@ python-versions = ">=3.7"
 [package.extras]
 test = ["pytest (>=3.0.0)"]
 
+[[package]]
+name = "xlsxwriter"
+version = "3.0.8"
+description = "A Python module for creating Excel XLSX files."
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.10,<4.0"
-content-hash = "bfe6db0dad378a4786c2c9bb3ab933022fef4462b345de9d2cb8039370334062"
+content-hash = "18f8b6a3fb9dc5d0393a4e33f36d6c2ec3a2bffbdd3cb2ad53d6c80b6ff2446b"
 
 [metadata.files]
 certifi = [
@@ -1121,4 +1129,8 @@ urllib3 = [
 wheel = [
     {file = "wheel-0.38.4-py3-none-any.whl", hash = "sha256:b60533f3f5d530e971d6737ca6d58681ee434818fab630c83a734bb10c083ce8"},
     {file = "wheel-0.38.4.tar.gz", hash = "sha256:965f5259b566725405b05e7cf774052044b1ed30119b5d586b2703aafe8719ac"},
+]
+xlsxwriter = [
+    {file = "XlsxWriter-3.0.8-py3-none-any.whl", hash = "sha256:f5c7491b8450cf49968428f062355de16c9140aa24eafc466c9dfe107610bd44"},
+    {file = "XlsxWriter-3.0.8.tar.gz", hash = "sha256:ec77335fb118c36bc5ed1c89e33904d649e4989df2d7980f7d6a9dd95ee5874e"},
 ]
