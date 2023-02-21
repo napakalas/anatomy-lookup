@@ -340,7 +340,7 @@ class AnatomyLookup:
         cos_scores = util.cos_sim(query_emb, self.__spell_embs)[0]
         top_results = torch.topk(cos_scores, k=1)
         score = top_results[0][0].item()
-        if score >= 0.8 and score <1:
+        if score >= 0.88 and score <1:
             query = self.__spell_phrases[top_results[1][0].item()]
             query_emb = self.__model.encode(query, show_progress_bar=False, convert_to_tensor=True)
         # return emb
