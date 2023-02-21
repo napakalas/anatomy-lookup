@@ -416,10 +416,10 @@ class AnatomyLookup:
         results = self.search_candidates(query, k=1, force=force)
         return results[0]
     
-    def search_with_scope(self, query:str, scope: str|list[str], k:int=5, treshold=0.8, force=False):
+    def search_with_scope(self, query:str, scope: str|list[str], k:int=5, threshold=0.8, force=False):
         if isinstance(scope, str):
             idx_scope, _, score_scope = self.search(scope)
-            if score_scope < treshold:
+            if score_scope < threshold:
                 logging.info("Scope is not available, the score lower than 0.8")
                 return []
             return self.search_candidates(query, k, list(self.get_descendant(idx_scope)), force=force)
@@ -427,7 +427,7 @@ class AnatomyLookup:
             descendants = set()
             for sc in scope:
                 idx_scope, _, score_scope = self.search(sc)
-                if score_scope >= treshold:
+                if score_scope >= threshold:
                     descendants.update(list(self.get_descendant(idx_scope)))
             if len(descendants) == 0:
                 logging.info("Scope is not available, the score lower than 0.8")
