@@ -135,6 +135,9 @@ dmypy.json
 
 # Large file
 onto_embs.pt
+rdflib.graph
+spelling_embs.pt
+onto_hierarchy.json
 
 # Retain folder
 !anatomy_lookup/resources/.gitkeep
