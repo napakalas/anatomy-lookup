@@ -448,13 +448,13 @@ class AnatomyAnnotator:
         self.__lookup = AnatomyLookup()
         self.__data = {}
 
-    def annotate(self, data_file:str, search_attr:str, scope_attrs:list, treshold=0.8, force=False):
+    def annotate(self, data_file:str, search_attr:str, scope_attrs:list, threshold=0.8, force=False):
         """
         A method to annotate data to ontology terms
         data_file -> usually a json file containing systems, nerves, organs, and ftus
         search_attr -> the attribute to be annotated
         scope_attrs -> list of attribute to limit annotation
-        treshold -> the minimum score to make sure the annotation is correct
+        threshold -> the minimum score to make sure the annotation is correct
         """
         with open(data_file, 'r') as fp:
             data = json.load(fp)
@@ -462,7 +462,7 @@ class AnatomyAnnotator:
         for group in data.values():
             for item in tqdm(group):
                 properties = self.__lookup.search(item[search_attr], force=force)
-                if properties[2] >= treshold:
+                if properties[2] >= threshold:
                     item['properties'] = {'models': get_curie(properties[0]),
                                           'label': properties[1],
                                           'confidence': properties[2]}
