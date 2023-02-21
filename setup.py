@@ -15,7 +15,10 @@ setup(
         'torch>=1.13.0',
         'tqdm',
         'sentence-transformers>=2.2.2',
+        'rdflib>=6.0.0',
+        'xlsxwriter>=3.0.1',
     ],
-    extras_require={'indexer': ['rdflib>=6.0.0',],},
+    # extras_require={'indexer': ['rdflib>=6.0.0',],},
       
 )
+#===============================================================================

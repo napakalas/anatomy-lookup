@@ -1,0 +1,3800 @@
+@prefix : <file:///ERROR/EMPTY/PREFIX/BANNED/> .
+@prefix BFO: <http://purl.obolibrary.org/obo/BFO_> .
+@prefix BIRNLEX: <http://uri.neuinfo.org/nif/nifstd/birnlex_> .
+@prefix CHEBI: <http://purl.obolibrary.org/obo/CHEBI_> .
+@prefix CL: <http://purl.obolibrary.org/obo/CL_> .
+@prefix GO: <http://purl.obolibrary.org/obo/GO_> .
+@prefix IAO: <http://purl.obolibrary.org/obo/IAO_> .
+@prefix ilxtr: <http://uri.interlex.org/tgbugs/uris/readable/> .
+@prefix NCBITaxon: <http://purl.obolibrary.org/obo/NCBITaxon_> .
+@prefix NLXINV: <http://uri.neuinfo.org/nif/nifstd/nlx_inv_> .
+@prefix NLXORG: <http://uri.neuinfo.org/nif/nifstd/nlx_organ_> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix PATO: <http://purl.obolibrary.org/obo/PATO_> .
+@prefix PR: <http://purl.obolibrary.org/obo/PR_> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix RO: <http://purl.obolibrary.org/obo/RO_> .
+@prefix SAO: <http://uri.neuinfo.org/nif/nifstd/sao> .
+@prefix SO: <http://purl.obolibrary.org/obo/SO_> .
+@prefix tech: <http://uri.interlex.org/tgbugs/uris/readable/technique/> .
+@prefix UBERON: <http://purl.obolibrary.org/obo/UBERON_> .
+
+<https://raw.githubusercontent.com/SciCrunch/NIF-Ontology/methods/ttl/methods.ttl> a owl:Ontology ;
+    rdfs:comment "The ontology of techniques and methods." ;
+    owl:versionInfo "2020-08-03" ;
+    ilxtr:indexNamespace <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/> ;
+    prov:wasGeneratedBy <https://github.com/tgbugs/pyontutils/blob/0ff540852193f6997d165c401efa079cfc3385ca/nifstd/nifstd_tools/methods/__init__.py> .
+
+### Classes
+
+BIRNLEX:2029 a owl:Class ;
+    rdfs:subClassOf BIRNLEX:2112 .
+
+BIRNLEX:2107 a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+BIRNLEX:2112 a owl:Class ;
+    rdfs:subClassOf ilxtr:microscope .
+
+BIRNLEX:2135 a owl:Class ;
+    rdfs:subClassOf tech:allocating,
+        tech:unfinished .
+
+BIRNLEX:2136 a owl:Class ;
+    rdfs:subClassOf ilxtr:technique .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/0> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/4> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/1> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/4> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/2> a owl:Class ;
+    rdfs:subClassOf ilxtr:technique .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/3> a owl:Class ;
+    rdfs:subClassOf ilxtr:technique .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/4> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/3> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/5> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/3> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/6> a owl:Class ;
+    rdfs:subClassOf ilxtr:technique .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/7> a owl:Class ;
+    rdfs:subClassOf ilxtr:technique .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/8> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/2>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/7> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/9> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/2> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/10> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/9> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/11> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/8>,
+        tech:ising .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/12> a owl:Class ;
+    rdfs:subClassOf ilxtr:technique .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/13> a owl:Class ;
+    rdfs:subClassOf ilxtr:protocolExecution,
+        tech:_naSeq .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/14> a owl:Class ;
+    rdfs:subClassOf ilxtr:protocolExecution,
+        tech:_naSeq .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/15> a owl:Class ;
+    rdfs:subClassOf ilxtr:protocolExecution,
+        tech:_naSeq .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/16> a owl:Class ;
+    rdfs:subClassOf tech:rnaSeq .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/17> a owl:Class ;
+    rdfs:subClassOf tech:rnaSeq,
+        tech:snSeq .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/18> a owl:Class ;
+    rdfs:subClassOf tech:rnaSeq,
+        tech:scSeq .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/19> a owl:Class ;
+    rdfs:subClassOf tech:rnaSeq .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/20> a owl:Class ;
+    rdfs:subClassOf tech:_naSeq,
+        tech:snSeq .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/21> a owl:Class ;
+    rdfs:subClassOf tech:snSeq .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/22> a owl:Class ;
+    rdfs:subClassOf tech:scSeq .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/23> a owl:Class ;
+    rdfs:subClassOf tech:sequencing,
+        tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/24> a owl:Class ;
+    rdfs:subClassOf tech:rnaSeq .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/25> a owl:Class ;
+    rdfs:subClassOf tech:rnaSeq,
+        tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/26> a owl:Class ;
+    rdfs:subClassOf tech:sequencing,
+        tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/27> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/28>,
+        tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/28> a owl:Class ;
+    rdfs:subClassOf tech:rnaSeq .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/29> a owl:Class ;
+    rdfs:subClassOf tech:anaesthesia,
+        tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/30> a owl:Class ;
+    rdfs:subClassOf tech:anaesthesia,
+        tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/31> a owl:Class ;
+    rdfs:subClassOf ilxtr:technique .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/32> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/7>,
+        tech:amplification .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/33> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/34> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/35> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/36> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/37> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/38> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/39> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/40> a owl:Class ;
+    rdfs:subClassOf tech:allocating .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/41> a owl:Class ;
+    rdfs:subClassOf tech:allocating .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/42> a owl:Class ;
+    rdfs:subClassOf tech:allocating .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/43> a owl:Class ;
+    rdfs:subClassOf tech:allocating .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/44> a owl:Class ;
+    rdfs:subClassOf tech:allocating .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/45> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/41> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/46> a owl:Class ;
+    rdfs:subClassOf tech:allocating .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/47> a owl:Class ;
+    rdfs:subClassOf BIRNLEX:2135 .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/48> a owl:Class ;
+    rdfs:subClassOf BIRNLEX:2135 .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/49> a owl:Class ;
+    rdfs:subClassOf BIRNLEX:2135 .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/50> a owl:Class ;
+    rdfs:subClassOf ilxtr:technique .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/51> a owl:Class ;
+    rdfs:subClassOf ilxtr:technique .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/52> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/51> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/53> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/5>,
+        tech:allocating,
+        tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/54> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/90>,
+        tech:electroporation .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/55> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/9>,
+        tech:cellPatching,
+        tech:electroporation .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/56> a owl:Class ;
+    rdfs:subClassOf tech:cellPatching,
+        tech:electroporation .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/57> a owl:Class ;
+    rdfs:subClassOf tech:allocating .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/58> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/57>,
+        tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/59> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/57>,
+        tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/60> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/7>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/57> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/61> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/7>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/57> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/62> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/57> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/63> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/4> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/64> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/6>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/63> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/65> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/6>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/63> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/66> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/64>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/65> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/67> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/6>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/63>,
+        tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/68> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/6>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/63> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/69> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/68>,
+        tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/70> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/68>,
+        tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/71> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/149> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/72> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/71>,
+        tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/73> a owl:Class ;
+    rdfs:subClassOf tech:allocating .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/74> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/4> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/75> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/4>,
+        tech:histology .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/76> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/6>,
+        tech:measuring .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/77> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/71>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/150> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/78> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/6> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/79> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/6>,
+        tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/80> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/81> a owl:Class ;
+    rdfs:subClassOf tech:sigproc .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/82> a owl:Class ;
+    rdfs:subClassOf tech:measuring .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/83> a owl:Class ;
+    rdfs:subClassOf ilxtr:technique .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/84> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/85> a owl:Class ;
+    rdfs:subClassOf ilxtr:technique .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/86> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/149>,
+        tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/87> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/3>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/6> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/88> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/5> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/89> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/5> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/90> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/5> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/91> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/92> a owl:Class ;
+    rdfs:subClassOf tech:analysis .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/93> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/4>,
+        tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/94> a owl:Class ;
+    rdfs:subClassOf tech:dissection .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/95> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/4> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/96> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/2>,
+        tech:measuring .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/97> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/4>,
+        tech:histology .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/98> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/97>,
+        ilxtr:protocolExecution .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/99> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/75>,
+        tech:fixation .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/100> a owl:Class ;
+    rdfs:subClassOf tech:actualizing .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/101> a owl:Class ;
+    rdfs:subClassOf tech:actualizing .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/102> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/7>,
+        tech:creating .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/103> a owl:Class ;
+    rdfs:subClassOf tech:creating,
+        tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/104> a owl:Class ;
+    rdfs:subClassOf tech:creating,
+        tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/105> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/106> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/107> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/108> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/109> a owl:Class ;
+    rdfs:subClassOf tech:maintaining .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/110> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/2>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/109> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/111> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/110>,
+        tech:actualizing .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/112> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/5>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/111>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/120> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/113> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/111>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/120> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/114> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/109> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/115> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/109> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/116> a owl:Class ;
+    rdfs:subClassOf tech:histology,
+        tech:maintaining .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/117> a owl:Class ;
+    rdfs:subClassOf tech:maintaining .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/118> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/2>,
+        tech:maintaining,
+        tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/119> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/109> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/120> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/109> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/121> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/122> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/123> a owl:Class ;
+    rdfs:subClassOf ilxtr:technique .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/124> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/2>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/109> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/125> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/126> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/127> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/9>,
+        tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/128> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/129> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/130> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/3> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/131> a owl:Class ;
+    rdfs:subClassOf tech:separating,
+        tech:separation .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/132> a owl:Class ;
+    rdfs:subClassOf ilxtr:technique .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/133> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/6>,
+        tech:precipitation,
+        tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/134> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/135> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/136> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/137> a owl:Class ;
+    rdfs:subClassOf tech:actualizing .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/138> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/3> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/139> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/2>,
+        tech:actualizing .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/140> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/139> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/141> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/142> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/143> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/144> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/145> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/146> a owl:Class ;
+    rdfs:subClassOf tech:measuring .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/147> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/148> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/5>,
+        tech:allocating .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/149> a owl:Class ;
+    rdfs:subClassOf ilxtr:technique .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/150> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/149> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/151> a owl:Class ;
+    rdfs:subClassOf tech:sigproc .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/152> a owl:Class ;
+    rdfs:subClassOf tech:ephysRecording .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/153> a owl:Class ;
+    rdfs:subClassOf tech:creating .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/154> a owl:Class ;
+    rdfs:subClassOf tech:creating .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/155> a owl:Class ;
+    rdfs:subClassOf tech:creating .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/156> a owl:Class ;
+    rdfs:subClassOf tech:maintaining .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/157> a owl:Class ;
+    rdfs:subClassOf tech:lightMicroscopy .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/158> a owl:Class ;
+    rdfs:subClassOf tech:opticalImaging .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/159> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/82>,
+        tech:imaging .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/160> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/82>,
+        tech:imaging .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/161> a owl:Class ;
+    rdfs:subClassOf tech:opticalImaging,
+        tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/162> a owl:Class ;
+    rdfs:subClassOf tech:ephysRecording,
+        tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/163> a owl:Class ;
+    rdfs:subClassOf tech:ephys,
+        tech:measuring,
+        tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/164> a owl:Class ;
+    rdfs:subClassOf ilxtr:technique .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/165> a owl:Class ;
+    rdfs:subClassOf tech:activityModulation,
+        tech:actualizing .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/166> a owl:Class ;
+    rdfs:subClassOf tech:activityModulation,
+        tech:actualizing .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/167> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/168> a owl:Class ;
+    rdfs:subClassOf ilxtr:technique .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/169> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/8>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/43>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/168> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/170> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/165> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/171> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/166> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/172> a owl:Class ;
+    rdfs:subClassOf tech:probing,
+        tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/173> a owl:Class ;
+    rdfs:subClassOf tech:probing,
+        tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/174> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/7>,
+        tech:actualizing .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/175> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/176> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/177> a owl:Class ;
+    rdfs:subClassOf tech:actualizing .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/178> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/179> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/180> a owl:Class ;
+    rdfs:subClassOf tech:actualizing .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/181> a owl:Class ;
+    rdfs:subClassOf tech:actualizing .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/182> a owl:Class ;
+    rdfs:subClassOf tech:actualizing .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/183> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/2>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/6>,
+        tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/184> a owl:Class ;
+    rdfs:subClassOf tech:actualizing,
+        tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/185> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/2>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/6>,
+        tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/186> a owl:Class ;
+    rdfs:subClassOf tech:actualizing,
+        tech:probing .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/187> a owl:Class ;
+    rdfs:subClassOf tech:probing,
+        tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/188> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/4>,
+        tech:probing,
+        tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/189> a owl:Class ;
+    rdfs:subClassOf tech:stim_Magnetic,
+        tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/190> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/191> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/192> a owl:Class ;
+    rdfs:subClassOf BFO:0000015 .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/193> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/2>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/6>,
+        tech:creating,
+        tech:histology .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/194> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/2>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/6>,
+        tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/195> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/2>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/6>,
+        tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/196> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/2>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/6>,
+        tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/197> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/2>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/6>,
+        tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/198> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/2>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/6> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/199> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/4> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/200> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/201> a owl:Class ;
+    rdfs:subClassOf ilxtr:technique .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/202> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/203> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/2>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/6>,
+        tech:allocating .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/204> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/2>,
+        tech:actualizing .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/205> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/2>,
+        tech:actualizing .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/206> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/203>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/205> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/207> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/203> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/208> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/2>,
+        tech:allocating .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/209> a owl:Class ;
+    rdfs:subClassOf tech:sectioning .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/210> a owl:Class ;
+    rdfs:subClassOf tech:sectioning .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/211> a owl:Class ;
+    rdfs:subClassOf tech:sectioning,
+        tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/212> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/2>,
+        tech:sectioning .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/213> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/2>,
+        tech:sectioning .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/214> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/2>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/3>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/6> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/215> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/2>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/3>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/6> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/216> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/3>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/6>,
+        tech:microscopy .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/217> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/3>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/6>,
+        tech:microscopy .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/218> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/3>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/6>,
+        tech:microscopy .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/219> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/4>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/6>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/7>,
+        tech:probing .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/220> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/4>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/6>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/7>,
+        tech:probing .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/221> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/4>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/6>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/7>,
+        tech:probing .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/222> a owl:Class ;
+    rdfs:subClassOf tech:ephys .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/223> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/225> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/224> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/225> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/225> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/6>,
+        tech:ephys,
+        tech:measuring .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/226> a owl:Class ;
+    rdfs:subClassOf tech:cellPatching,
+        tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/227> a owl:Class ;
+    rdfs:subClassOf tech:cellPatching,
+        tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/228> a owl:Class ;
+    rdfs:subClassOf tech:cellPatching,
+        tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/229> a owl:Class ;
+    rdfs:subClassOf tech:cellPatching,
+        tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/230> a owl:Class ;
+    rdfs:subClassOf tech:cellPatching,
+        tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/231> a owl:Class ;
+    rdfs:subClassOf tech:eClamp .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/232> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/2>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/3>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/6> .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/233> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/6>,
+        tech:ephys .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/234> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/6>,
+        tech:ephys .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/235> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/236> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/237> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/238> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/239> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/240> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/241> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/242> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/243> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/244> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/245> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/246> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/251> a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/6>,
+        tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/252> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/253> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/254> a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/1> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/2> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/3> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/4> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/5> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/6> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/7> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/8> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/9> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/10> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/11> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/12> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/13> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/14> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/15> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/16> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/17> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/18> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/19> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/20> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/21> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/22> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/23> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/24> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/25> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/26> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/27> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/28> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/29> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/30> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/31> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/32> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/33> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/34> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/35> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/36> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/37> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/38> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/39> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/40> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/41> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/42> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/43> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/44> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/45> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/46> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/47> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/48> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/49> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/50> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/51> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/52> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/53> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/54> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/55> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/56> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/57> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/58> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/59> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/60> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/61> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/62> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/63> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/64> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/65> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/66> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/67> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/68> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/69> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/70> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/71> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/72> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/73> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/74> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/75> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/76> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/77> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/78> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/79> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/80> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/81> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/82> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/83> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/84> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/85> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/86> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/87> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/88> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/89> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/90> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/91> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/92> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/93> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/94> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/95> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/96> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/97> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/98> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/99> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/100> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/101> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/102> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/103> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/104> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/105> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/106> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/107> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/108> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/109> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/110> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/111> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/112> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/113> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/114> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/115> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/116> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/117> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/118> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/blank/119> a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+<http://uri.interlex.org/tgbugs/uris/readable/process/anterogradeMovement> a owl:Class ;
+    rdfs:subClassOf BFO:0000015 .
+
+<http://uri.interlex.org/tgbugs/uris/readable/process/diffusion> a owl:Class ;
+    rdfs:subClassOf BFO:0000015 .
+
+<http://uri.interlex.org/tgbugs/uris/readable/process/retrogradeMovement> a owl:Class ;
+    rdfs:subClassOf BFO:0000015 .
+
+ilxtr:allocatingProcessPart a owl:Class ;
+    rdfs:subClassOf BFO:0000015 .
+
+ilxtr:analysisRole a owl:Class ;
+    rdfs:subClassOf BFO:0000023,
+        CHEBI:50906 .
+
+ilxtr:cell a owl:Class ;
+    rdfs:subClassOf BFO:0000040,
+        ilxtr:materialEntity .
+
+ilxtr:intoSomething a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+ilxtr:intrinsicSignal a owl:Class ;
+    rdfs:subClassOf ilxtr:Something .
+
+ilxtr:mRNA a owl:Class ;
+    rdfs:subClassOf CHEBI:33697,
+        ilxtr:RNA .
+
+ilxtr:RNA a owl:Class ;
+    rdfs:subClassOf CHEBI:33696 .
+
+ilxtr:separationProcessPart a owl:Class ;
+    rdfs:subClassOf ilxtr:allocatingProcessPart .
+
+ilxtr:Something a owl:Class .
+
+ilxtr:xrayImaging a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/82>,
+        tech:imaging .
+
+NLXINV:20090609 a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/2>,
+        tech:unfinished .
+
+SO:0000352 a owl:Class ;
+    rdfs:subClassOf ilxtr:_NApolymer .
+
+SO:0000356 a owl:Class ;
+    rdfs:subClassOf ilxtr:_NApolymer .
+
+tech:_naSeq a owl:Class ;
+    rdfs:subClassOf tech:sequencing .
+
+tech:activityModulation a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/4>,
+        tech:probing .
+
+tech:actualizing a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/4> .
+
+tech:aliquoting a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+tech:allocating a owl:Class ;
+    rdfs:subClassOf tech:actualizing .
+
+tech:amplification a owl:Class ;
+    rdfs:subClassOf tech:ising .
+
+tech:anaesthesia a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/6> .
+
+tech:analysis a owl:Class ;
+    rdfs:subClassOf ilxtr:technique .
+
+tech:anestheticAdministration a owl:Class ;
+    rdfs:subClassOf ilxtr:technique .
+
+tech:animal a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/89> .
+
+tech:ATACseq a owl:Class ;
+    rdfs:subClassOf tech:sequencing,
+        tech:unfinished .
+
+tech:cellCulture a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/2>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/5>,
+        tech:maintaining .
+
+tech:cellPatching a owl:Class ;
+    rdfs:subClassOf tech:ephys .
+
+tech:chromium3p a owl:Class ;
+    rdfs:subClassOf tech:rnaSeq,
+        tech:unfinished .
+
+tech:chromium3pv1 a owl:Class ;
+    rdfs:subClassOf tech:chromium3p .
+
+tech:chromium3pv2 a owl:Class ;
+    rdfs:subClassOf tech:chromium3p .
+
+tech:contrastDetection a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/4> .
+
+tech:contrastEnhancement a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/3> .
+
+tech:creating a owl:Class ;
+    rdfs:subClassOf tech:actualizing,
+        tech:ising .
+
+tech:cutting a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/2> .
+
+tech:delivery a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/148> .
+
+tech:destroying a owl:Class ;
+    rdfs:subClassOf tech:actualizing,
+        tech:ising .
+
+tech:dissection a owl:Class ;
+    rdfs:subClassOf tech:creating .
+
+tech:dropSep a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+tech:DTI a owl:Class ;
+    rdfs:subClassOf tech:dwMRI .
+
+tech:DTI_ImageProcessing a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/150>,
+        tech:unfinished .
+
+tech:dwMRI a owl:Class ;
+    rdfs:subClassOf ilxtr:protocolExecution,
+        tech:MRI .
+
+tech:dwMRI_ImageProcessing a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/150>,
+        tech:unfinished .
+
+tech:eClamp a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/2>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/4>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/5> .
+
+tech:electronMicroscopy a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/82>,
+        tech:imaging,
+        tech:microscopy .
+
+tech:electrophoresis a owl:Class ;
+    rdfs:subClassOf tech:actualizing .
+
+tech:electroporation a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/6>,
+        tech:poration .
+
+tech:enrichment a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/4> .
+
+tech:ephys a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/2>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/4> .
+
+tech:ephysRecording a owl:Class ;
+    rdfs:subClassOf tech:ephys,
+        tech:measuring .
+
+tech:euthanasia a owl:Class ;
+    owl:equivalentClass tech:killing ;
+    rdfs:subClassOf tech:actualizing .
+
+tech:extracellularEphys a owl:Class ;
+    rdfs:subClassOf tech:ephys .
+
+tech:FISH a owl:Class ;
+    rdfs:subClassOf tech:ISH .
+
+tech:fixation a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/74>,
+        tech:actualizing .
+
+tech:fMRI a owl:Class ;
+    rdfs:subClassOf ilxtr:protocolExecution,
+        tech:MRI .
+
+tech:fMRI_ImageProcessing a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/150>,
+        tech:unfinished .
+
+tech:histology a owl:Class ;
+    rdfs:subClassOf ilxtr:technique .
+
+tech:imaging a owl:Class ;
+    rdfs:subClassOf tech:measuring .
+
+tech:inSitu a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+tech:inVitro a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+tech:IRDIC a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/82>,
+        tech:imaging,
+        tech:microscopy .
+
+tech:ISH a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/4>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/6>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/8> .
+
+tech:ising a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/4> .
+
+tech:killing a owl:Class ;
+    rdfs:subClassOf tech:actualizing .
+
+tech:libraryPrep a owl:Class ;
+    rdfs:subClassOf tech:creating .
+
+tech:lightMicroscopy a owl:Class ;
+    rdfs:subClassOf tech:microscopy,
+        tech:opticalImaging .
+
+tech:lightsheetMicroscopy a owl:Class ;
+    rdfs:subClassOf tech:lightMicroscopy .
+
+tech:lightSheetMicroscopyFluorescent a owl:Class ;
+    rdfs:subClassOf tech:lightsheetMicroscopy .
+
+tech:lightSheetTomographyOblique a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/214>,
+        tech:unfinished .
+
+tech:localization a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+tech:maintaining a owl:Class ;
+    rdfs:subClassOf tech:ising .
+
+tech:mcSeq a owl:Class ;
+    rdfs:subClassOf tech:_naSeq .
+
+tech:measuring a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/4> .
+
+tech:MERFISH a owl:Class ;
+    rdfs:subClassOf tech:FISH,
+        tech:unfinished .
+
+tech:microscopy a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/2> .
+
+tech:MRI a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/6>,
+        tech:imaging .
+
+tech:MRI_ImageProcessing a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/150>,
+        tech:contrastDetection,
+        tech:unfinished .
+
+tech:multiElectrodeEphys a owl:Class ;
+    rdfs:subClassOf tech:extracellularEphys .
+
+tech:naming a owl:Class ;
+    rdfs:subClassOf ilxtr:technique .
+
+tech:opticalImaging a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/82>,
+        tech:imaging .
+
+tech:patchClamp a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/6>,
+        tech:ephys .
+
+tech:perfusion a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+tech:poration a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/101> .
+
+tech:positronEmissionImaging a owl:Class ;
+    rdfs:subClassOf ilxtr:technique .
+
+tech:precipitation a owl:Class ;
+    rdfs:subClassOf ilxtr:technique .
+
+tech:probing a owl:Class ;
+    rdfs:subClassOf ilxtr:technique .
+
+tech:rnaSeq a owl:Class ;
+    rdfs:subClassOf tech:_naSeq .
+
+tech:scanningElectronMicroscopy a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/82>,
+        tech:imaging .
+
+tech:scSeq a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/9>,
+        tech:sequencing .
+
+tech:sectioning a owl:Class ;
+    rdfs:subClassOf tech:dissection .
+
+tech:sedation a owl:Class ;
+    rdfs:subClassOf ilxtr:technique .
+
+tech:separating a owl:Class ;
+    owl:equivalentClass tech:separation ;
+    rdfs:subClassOf tech:allocating .
+
+tech:separation a owl:Class ;
+    rdfs:subClassOf tech:allocating .
+
+tech:sequencing a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/6>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/8>,
+        tech:measuring .
+
+tech:sharpElectrodeEphys a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/222> .
+
+tech:sharpElectrodeTechnique a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/2> .
+
+tech:sigproc a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/149> .
+
+tech:singleElectrodeEphys a owl:Class ;
+    rdfs:subClassOf tech:extracellularEphys .
+
+tech:smartSeq a owl:Class ;
+    rdfs:subClassOf tech:rnaSeq .
+
+tech:smFISH a owl:Class ;
+    rdfs:subClassOf tech:FISH,
+        tech:unfinished .
+
+tech:snSeq a owl:Class ;
+    rdfs:subClassOf tech:sequencing .
+
+tech:stateBasedContrastEnhancement a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+tech:statistics a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/71> .
+
+tech:stim_Magnetic a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/4>,
+        tech:probing .
+
+tech:surgical a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/2>,
+        <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/6>,
+        tech:unfinished .
+
+tech:thermalporation a owl:Class ;
+    rdfs:subClassOf tech:poration .
+
+tech:tomography a owl:Class ;
+    rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/indexes/ontologies/methods/77> .
+
+tech:twoPhoton a owl:Class ;
+    rdfs:subClassOf tech:unfinished .
+
+tech:unfinished a owl:Class ;
+    rdfs:subClassOf ilxtr:technique .
+
+tech:vClamp a owl:Class ;
+    rdfs:subClassOf tech:eClamp .
+
+tech:wholeCellPatch a owl:Class ;
+    rdfs:subClassOf tech:cellPatching,
+        tech:unfinished .
+
+### Annotations
+
+BFO:0000023 rdfs:subClassOf PATO:0000001 .
+
+BFO:0000024 rdfs:subClassOf ilxtr:materialEntity .
+
+BFO:0000027 rdfs:subClassOf ilxtr:materialEntity .
+
+BFO:0000030 rdfs:subClassOf ilxtr:materialEntity .
+
+BIRNLEX:2 rdfs:subClassOf ilxtr:materialEntity .
+
+BIRNLEX:103 rdfs:subClassOf NCBITaxon:9539 .
+
+BIRNLEX:111 rdfs:subClassOf NCBITaxon:9682 .
+
+BIRNLEX:113 rdfs:subClassOf NCBITaxon:9685 .
+
+BIRNLEX:120 rdfs:subClassOf NCBITaxon:9528 .
+
+BIRNLEX:122 rdfs:subClassOf NCBITaxon:9554 .
+
+BIRNLEX:123 rdfs:subClassOf NCBITaxon:378850 .
+
+BIRNLEX:127 rdfs:subClassOf NCBITaxon:314293 .
+
+BIRNLEX:128 rdfs:subClassOf NCBITaxon:9513 .
+
+BIRNLEX:135 rdfs:subClassOf NCBITaxon:9520 .
+
+BIRNLEX:142 rdfs:subClassOf NCBITaxon:436492 .
+
+BIRNLEX:147 rdfs:subClassOf NCBITaxon:46877 .
+
+BIRNLEX:150 rdfs:subClassOf NCBITaxon:8782 .
+
+BIRNLEX:154 rdfs:subClassOf NCBITaxon:7460 .
+
+BIRNLEX:156 rdfs:subClassOf NCBITaxon:7215 .
+
+BIRNLEX:160 rdfs:subClassOf NCBITaxon:10114 .
+
+BIRNLEX:161 rdfs:subClassOf NCBITaxon:10090 .
+
+BIRNLEX:167 rdfs:subClassOf NCBITaxon:862507 .
+
+BIRNLEX:171 rdfs:subClassOf NCBITaxon:10090 .
+
+BIRNLEX:201 rdfs:subClassOf NCBITaxon:7742 .
+
+BIRNLEX:212 rdfs:subClassOf NCBITaxon:89593 .
+
+BIRNLEX:220 rdfs:subClassOf NCBITaxon:600346 .
+
+BIRNLEX:224 rdfs:subClassOf NCBITaxon:10090 .
+
+BIRNLEX:229 rdfs:subClassOf NCBITaxon:6762 .
+
+BIRNLEX:252 rdfs:subClassOf NCBITaxon:32524 .
+
+BIRNLEX:254 rdfs:subClassOf NCBITaxon:10116 .
+
+BIRNLEX:263 rdfs:subClassOf NCBITaxon:314147 .
+
+BIRNLEX:266 rdfs:subClassOf NCBITaxon:10116 .
+
+BIRNLEX:270 rdfs:subClassOf NCBITaxon:9989 .
+
+BIRNLEX:275 rdfs:subClassOf NCBITaxon:6960 .
+
+BIRNLEX:278 rdfs:subClassOf NCBITaxon:197562 .
+
+BIRNLEX:280 rdfs:subClassOf NCBITaxon:9528 .
+
+BIRNLEX:281 rdfs:subClassOf NCBITaxon:50557 .
+
+BIRNLEX:284 rdfs:subClassOf NCBITaxon:6657 .
+
+BIRNLEX:291 rdfs:subClassOf NCBITaxon:9539 .
+
+BIRNLEX:312 rdfs:subClassOf NCBITaxon:9989 .
+
+BIRNLEX:333 rdfs:subClassOf NCBITaxon:6995 .
+
+BIRNLEX:353 rdfs:subClassOf NCBITaxon:9479 .
+
+BIRNLEX:354 rdfs:subClassOf NCBITaxon:1206795 .
+
+BIRNLEX:360 rdfs:subClassOf NCBITaxon:9504 .
+
+BIRNLEX:364 rdfs:subClassOf NCBITaxon:6340 .
+
+BIRNLEX:365 rdfs:subClassOf NCBITaxon:376918 .
+
+BIRNLEX:374 rdfs:subClassOf NCBITaxon:42113 .
+
+BIRNLEX:375 rdfs:subClassOf NCBITaxon:9504 .
+
+BIRNLEX:383 rdfs:subClassOf NCBITaxon:55824 .
+
+BIRNLEX:385 rdfs:subClassOf NCBITaxon:9479 .
+
+BIRNLEX:394 rdfs:subClassOf NCBITaxon:32523 .
+
+BIRNLEX:399 rdfs:subClassOf NLXORG:110506 .
+
+BIRNLEX:407 rdfs:subClassOf NCBITaxon:9539 .
+
+BIRNLEX:409 rdfs:subClassOf NCBITaxon:6970 .
+
+BIRNLEX:418 rdfs:subClassOf NCBITaxon:85823 .
+
+BIRNLEX:420 rdfs:subClassOf NCBITaxon:6237 .
+
+BIRNLEX:428 rdfs:subClassOf NCBITaxon:1206795 .
+
+BIRNLEX:437 rdfs:subClassOf NCBITaxon:6447 .
+
+BIRNLEX:447 rdfs:subClassOf NCBITaxon:7459 .
+
+BIRNLEX:450 rdfs:subClassOf NCBITaxon:9935 .
+
+BIRNLEX:451 rdfs:subClassOf NCBITaxon:70906 .
+
+BIRNLEX:456 rdfs:subClassOf NCBITaxon:9940 .
+
+BIRNLEX:463 rdfs:subClassOf NCBITaxon:314294 .
+
+BIRNLEX:464 rdfs:subClassOf NCBITaxon:6498 .
+
+BIRNLEX:470 rdfs:subClassOf NCBITaxon:6499 .
+
+BIRNLEX:481 rdfs:subClassOf NCBITaxon:8292 .
+
+BIRNLEX:485 rdfs:subClassOf NCBITaxon:40674 .
+
+BIRNLEX:516 rdfs:subClassOf NCBITaxon:9605 .
+
+BIRNLEX:519 rdfs:subClassOf NCBITaxon:6447 .
+
+BIRNLEX:524 rdfs:subClassOf NCBITaxon:9527 .
+
+BIRNLEX:541 rdfs:subClassOf NCBITaxon:88770 .
+
+BIRNLEX:547 rdfs:subClassOf NCBITaxon:6656 .
+
+BIRNLEX:571 rdfs:subClassOf NCBITaxon:6231 .
+
+BIRNLEX:574 rdfs:subClassOf NCBITaxon:9479 .
+
+BIRNLEX:578 rdfs:subClassOf NCBITaxon:1206794 .
+
+BIRNLEX:585 rdfs:subClassOf NCBITaxon:33327 .
+
+BIRNLEX:588 rdfs:subClassOf NCBITaxon:38070 .
+
+BIRNLEX:593 rdfs:subClassOf NCBITaxon:7742 .
+
+BIRNLEX:611 rdfs:subClassOf NCBITaxon:9479 .
+
+BIRNLEX:668 rdfs:subClassOf NCBITaxon:9612 .
+
+BIRNLEX:669 rdfs:subClassOf NCBITaxon:9615 .
+
+BIRNLEX:710 rdfs:subClassOf NCBITaxon:10116 .
+
+BIRNLEX:7000 rdfs:subClassOf NCBITaxon:6656 .
+
+BIRNLEX:7240 rdfs:subClassOf NCBITaxon:6533 .
+
+BIRNLEX:7241 rdfs:subClassOf BIRNLEX:7291,
+        NCBITaxon:6534 .
+
+BIRNLEX:7247 rdfs:subClassOf NCBITaxon:216354 .
+
+BIRNLEX:7248 rdfs:subClassOf NCBITaxon:205592 .
+
+BIRNLEX:7265 rdfs:subClassOf NCBITaxon:70851 .
+
+BIRNLEX:7266 rdfs:subClassOf NCBITaxon:70852 .
+
+BIRNLEX:7267 rdfs:subClassOf NCBITaxon:70852 .
+
+BIRNLEX:7268 rdfs:subClassOf NCBITaxon:70852 .
+
+BIRNLEX:7281 rdfs:subClassOf NCBITaxon:70849 .
+
+BIRNLEX:7282 rdfs:subClassOf NCBITaxon:216331 .
+
+BIRNLEX:7292 rdfs:subClassOf BIRNLEX:7240,
+        NCBITaxon:6534 .
+
+BIRNLEX:7300 rdfs:subClassOf NCBITaxon:9554 .
+
+BIRNLEX:7385 rdfs:subClassOf CHEBI:50906 .
+
+CHEBI:4705 rdfs:subClassOf ilxtr:DNA .
+
+CHEBI:16991 rdfs:subClassOf ilxtr:nucleicAcid .
+
+CHEBI:24431 rdfs:subClassOf ilxtr:materialEntity .
+
+CHEBI:25362 rdfs:subClassOf ilxtr:molecule .
+
+CHEBI:33595 rdfs:subClassOf ilxtr:molecule .
+
+CHEBI:33697 rdfs:subClassOf ilxtr:nucleicAcid .
+
+CHEBI:36080 rdfs:subClassOf PR:000018263 .
+
+CHEBI:36342 rdfs:subClassOf ilxtr:materialEntity .
+
+CHEBI:38560 rdfs:subClassOf PR:000000001 .
+
+CHEBI:48010 rdfs:subClassOf ilxtr:nucleicAcid .
+
+CHEBI:48015 rdfs:subClassOf ilxtr:nucleicAcid .
+
+CHEBI:48019 rdfs:subClassOf ilxtr:nucleicAcid .
+
+CHEBI:48021 rdfs:subClassOf ilxtr:nucleicAcid .
+
+CHEBI:50906 rdfs:subClassOf BFO:0000017 .
+
+CHEBI:72695 rdfs:subClassOf ilxtr:molecule .
+
+CL:0000014 rdfs:subClassOf CL:0000034,
+        CL:0000039 .
+
+CL:0000021 rdfs:subClassOf CL:0000586 .
+
+CL:0000022 rdfs:subClassOf CL:0000014,
+        CL:0000021 .
+
+CL:0000023 rdfs:subClassOf CL:0000021 .
+
+CL:0000024 rdfs:subClassOf CL:0000021 .
+
+CL:0000025 rdfs:subClassOf CL:0000675 .
+
+CL:0000027 rdfs:subClassOf CL:0000192 .
+
+CL:0000029 rdfs:subClassOf CL:0000540 .
+
+CL:0000038 rdfs:subClassOf CL:0000839 .
+
+CL:0000040 rdfs:subClassOf CL:0002194 .
+
+CL:0000042 rdfs:subClassOf CL:0000835 .
+
+CL:0000049 rdfs:subClassOf CL:0002032 .
+
+CL:0000050 rdfs:subClassOf CL:0002032 .
+
+CL:0000051 rdfs:subClassOf CL:0002032 .
+
+CL:0000071 rdfs:subClassOf CL:0000076 .
+
+CL:0000081 rdfs:subClassOf CL:0000988 .
+
+CL:0000083 rdfs:subClassOf CL:0000066 .
+
+CL:0000084 rdfs:subClassOf CL:0000542 .
+
+CL:0000092 rdfs:subClassOf CL:0000766,
+        CL:0001035 .
+
+CL:0000094 rdfs:subClassOf CL:0000766 .
+
+CL:0000128 rdfs:subClassOf CL:0000126 .
+
+CL:0000134 rdfs:subClassOf CL:0002320 .
+
+CL:0000148 rdfs:subClassOf CL:0000147 .
+
+CL:0000157 rdfs:subClassOf CL:0000151 .
+
+CL:0000158 rdfs:subClassOf CL:0002328 .
+
+CL:0000161 rdfs:subClassOf CL:0000151 .
+
+CL:0000169 rdfs:subClassOf CL:0000164,
+        CL:0000168 .
+
+CL:0000210 rdfs:subClassOf CL:0000006 .
+
+CL:0000214 rdfs:subClassOf CL:0002078 .
+
+CL:0000232 rdfs:subClassOf CL:0000764 .
+
+CL:0000235 rdfs:subClassOf CL:0000766 .
+
+CL:0000242 rdfs:subClassOf CL:0000312 .
+
+CL:0000300 rdfs:subClassOf CL:0000586 .
+
+CL:0000307 rdfs:subClassOf CL:0002202 .
+
+CL:0000312 rdfs:subClassOf CL:0000237,
+        CL:0000362 .
+
+CL:0000351 rdfs:subClassOf CL:0000349 .
+
+CL:0000355 rdfs:subClassOf CL:0000048 .
+
+CL:0000358 rdfs:subClassOf CL:0000192 .
+
+CL:0000359 rdfs:subClassOf CL:0000192 .
+
+CL:0000397 rdfs:subClassOf CL:0000099 .
+
+CL:0000402 rdfs:subClassOf CL:0000099 .
+
+CL:0000514 rdfs:subClassOf CL:0000056 .
+
+CL:0000515 rdfs:subClassOf CL:0000056 .
+
+CL:0000547 rdfs:subClassOf CL:0000764 .
+
+CL:0000549 rdfs:subClassOf CL:0000765 .
+
+CL:0000550 rdfs:subClassOf CL:0000765 .
+
+CL:0000552 rdfs:subClassOf CL:0000765 .
+
+CL:0000553 rdfs:subClassOf CL:0000839 .
+
+CL:0000556 rdfs:subClassOf CL:0000763 .
+
+CL:0000558 rdfs:subClassOf CL:0000764 .
+
+CL:0000559 rdfs:subClassOf CL:0002194 .
+
+CL:0000562 rdfs:subClassOf CL:0000232 .
+
+CL:0000564 rdfs:subClassOf CL:0000836 .
+
+CL:0000566 rdfs:subClassOf CL:0000134 .
+
+CL:0000576 rdfs:subClassOf CL:0000766 .
+
+CL:0000586 rdfs:subClassOf CL:0000039 .
+
+CL:0000595 rdfs:subClassOf CL:0000232 .
+
+CL:0000670 rdfs:subClassOf CL:0000039,
+        CL:0000219 .
+
+CL:0000675 rdfs:subClassOf CL:0000021 .
+
+CL:0000723 rdfs:subClassOf CL:0000034 .
+
+CL:0000738 rdfs:subClassOf CL:0000988 .
+
+CL:0000763 rdfs:subClassOf CL:0000988 .
+
+CL:0000765 rdfs:subClassOf CL:0000764 .
+
+CL:0000766 rdfs:subClassOf CL:0000738 .
+
+CL:0000775 rdfs:subClassOf CL:0000094 .
+
+CL:0000776 rdfs:subClassOf CL:0000775 .
+
+CL:0000778 rdfs:subClassOf CL:0000092 .
+
+CL:0000779 rdfs:subClassOf CL:0000092 .
+
+CL:0000782 rdfs:subClassOf CL:0000990 .
+
+CL:0000827 rdfs:subClassOf CL:0000838 .
+
+CL:0000834 rdfs:subClassOf CL:0002191 .
+
+CL:0000835 rdfs:subClassOf CL:0002191 .
+
+CL:0000838 rdfs:subClassOf CL:0002031 .
+
+CL:0000839 rdfs:subClassOf CL:0002031 .
+
+CL:0000842 rdfs:subClassOf CL:0000738 .
+
+CL:0000864 rdfs:subClassOf CL:0000235 .
+
+CL:0000878 rdfs:subClassOf CL:0000864 .
+
+CL:0000889 rdfs:subClassOf CL:0000766 .
+
+CL:0000990 rdfs:subClassOf CL:0000451 .
+
+CL:0001008 rdfs:subClassOf CL:0000037 .
+
+CL:0001021 rdfs:subClassOf CL:0000051 .
+
+CL:0001022 rdfs:subClassOf CL:0000576 .
+
+CL:0001024 rdfs:subClassOf CL:0000037 .
+
+CL:0001027 rdfs:subClassOf CL:0000051 .
+
+CL:0001028 rdfs:subClassOf CL:0000051 .
+
+CL:0001035 rdfs:subClassOf CL:0000548 .
+
+CL:0002000 rdfs:subClassOf CL:0001066 .
+
+CL:0002001 rdfs:subClassOf CL:0000557 .
+
+CL:0002005 rdfs:subClassOf CL:0000050 .
+
+CL:0002006 rdfs:subClassOf CL:0000050 .
+
+CL:0002009 rdfs:subClassOf CL:0002032 .
+
+CL:0002012 rdfs:subClassOf CL:0000547 .
+
+CL:0002014 rdfs:subClassOf CL:0000549 .
+
+CL:0002015 rdfs:subClassOf CL:0000550 .
+
+CL:0002017 rdfs:subClassOf CL:0000552 .
+
+CL:0002019 rdfs:subClassOf CL:0002422 .
+
+CL:0002022 rdfs:subClassOf CL:0000595 .
+
+CL:0002033 rdfs:subClassOf CL:0001008 .
+
+CL:0002034 rdfs:subClassOf CL:0001008 .
+
+CL:0002035 rdfs:subClassOf CL:0000837 .
+
+CL:0002036 rdfs:subClassOf CL:0000837 .
+
+CL:0002043 rdfs:subClassOf CL:0000837 .
+
+CL:0002064 rdfs:subClassOf CL:0000622 .
+
+CL:0002087 rdfs:subClassOf CL:0000738 .
+
+CL:0002088 rdfs:subClassOf CL:0000710 .
+
+CL:0002092 rdfs:subClassOf CL:0001035 .
+
+CL:0002149 rdfs:subClassOf CL:0002076 .
+
+CL:0002178 rdfs:subClassOf CL:0002251 .
+
+CL:0002183 rdfs:subClassOf CL:0000048 .
+
+CL:0002187 rdfs:subClassOf CL:0000646 .
+
+CL:0002191 rdfs:subClassOf CL:0000839 .
+
+CL:0002194 rdfs:subClassOf CL:0000839 .
+
+CL:0002195 rdfs:subClassOf CL:0000048 .
+
+CL:0002224 rdfs:subClassOf CL:0000075 .
+
+CL:0002243 rdfs:subClassOf CL:0000358 .
+
+CL:0002246 rdfs:subClassOf CL:0000037 .
+
+CL:0002252 rdfs:subClassOf CL:0002251 .
+
+CL:0002253 rdfs:subClassOf CL:0002563 .
+
+CL:0002254 rdfs:subClassOf CL:0002563 .
+
+CL:0002255 rdfs:subClassOf CL:0000499 .
+
+CL:0002320 rdfs:subClassOf CL:0002371 .
+
+CL:0002368 rdfs:subClassOf CL:0002076 .
+
+CL:0002421 rdfs:subClassOf CL:0000558 .
+
+CL:0002422 rdfs:subClassOf CL:0000558 .
+
+CL:0002453 rdfs:subClassOf CL:0000123 .
+
+CL:0002454 rdfs:subClassOf CL:0002465 .
+
+CL:0002465 rdfs:subClassOf CL:0000990 .
+
+CL:0002484 rdfs:subClassOf CL:0000148 .
+
+CL:0002485 rdfs:subClassOf CL:0000148 .
+
+CL:0002494 rdfs:subClassOf CL:0002371 .
+
+CL:0002504 rdfs:subClassOf CL:0000192 .
+
+CL:0002521 rdfs:subClassOf CL:0000136 .
+
+CL:0002538 rdfs:subClassOf CL:1000488 .
+
+CL:0002543 rdfs:subClassOf CL:0000071 .
+
+CL:0002547 rdfs:subClassOf CL:1000306 .
+
+CL:0002548 rdfs:subClassOf CL:0000057,
+        CL:0002494 .
+
+CL:0002551 rdfs:subClassOf CL:0002620 .
+
+CL:0002553 rdfs:subClassOf CL:0000057 .
+
+CL:0002557 rdfs:subClassOf CL:0000057 .
+
+CL:0002571 rdfs:subClassOf CL:0000134 .
+
+CL:0002574 rdfs:subClassOf CL:0000499 .
+
+CL:0002577 rdfs:subClassOf CL:0000349 .
+
+CL:0002585 rdfs:subClassOf CL:0000071 .
+
+CL:0002590 rdfs:subClassOf CL:0000359 .
+
+CL:0002599 rdfs:subClassOf CL:0000192 .
+
+CL:0002601 rdfs:subClassOf CL:0000192 .
+
+CL:0002610 rdfs:subClassOf CL:0000117 .
+
+CL:0002612 rdfs:subClassOf CL:0000117 .
+
+CL:0002620 rdfs:subClassOf CL:0000057 .
+
+CL:0002632 rdfs:subClassOf CL:0002368 .
+
+CL:0002657 rdfs:subClassOf CL:0000150,
+        CL:0002252 .
+
+CL:0002658 rdfs:subClassOf CL:0000150 .
+
+CL:0002659 rdfs:subClassOf CL:0000150 .
+
+CL:0002663 rdfs:subClassOf CL:0002074 .
+
+CL:0002680 rdfs:subClassOf CL:0000696 .
+
+CL:0005000 rdfs:subClassOf CL:0000402 .
+
+CL:0011001 rdfs:subClassOf CL:0000100 .
+
+CL:0012001 rdfs:subClassOf CL:0000117 .
+
+CL:1000275 rdfs:subClassOf CL:0002504 .
+
+CL:1000276 rdfs:subClassOf CL:1000275 .
+
+CL:1000279 rdfs:subClassOf CL:0002504 .
+
+CL:1000285 rdfs:subClassOf CL:1000280 .
+
+CL:1000298 rdfs:subClassOf CL:0000077 .
+
+CL:1000303 rdfs:subClassOf CL:0000057 .
+
+CL:1000306 rdfs:subClassOf CL:0000057 .
+
+CL:1000361 rdfs:subClassOf CL:0002073 .
+
+CL:1000362 rdfs:subClassOf CL:0002073 .
+
+CL:1000376 rdfs:subClassOf CL:0002068 .
+
+CL:1000412 rdfs:subClassOf CL:0000071 .
+
+CL:1000414 rdfs:subClassOf CL:0002139 .
+
+CL:1000415 rdfs:subClassOf CL:0000066 .
+
+CL:1000428 rdfs:subClassOf CL:0000723 .
+
+CL:1000443 rdfs:subClassOf CL:0000192 .
+
+CL:1000444 rdfs:subClassOf CL:0000077 .
+
+CL:1000447 rdfs:subClassOf CL:0000646 .
+
+CL:1000458 rdfs:subClassOf CL:0000148 .
+
+CL:1000478 rdfs:subClassOf CL:0002073 .
+
+CL:1000479 rdfs:subClassOf CL:0002068 .
+
+CL:1000482 rdfs:subClassOf CL:0002074 .
+
+CL:1000488 rdfs:subClassOf CL:0000069 .
+
+CL:1000490 rdfs:subClassOf CL:0000077 .
+
+CL:1000491 rdfs:subClassOf CL:0000077 .
+
+GO:0042391 rdfs:subClassOf BFO:0000015 .
+
+<http://uri.interlex.org/tgbugs/uris/readable/aspect/weightOnJupiter> rdfs:subClassOf <http://uri.interlex.org/tgbugs/uris/readable/aspect/Local> .
+
+IAO:0000006 rdfs:subClassOf ilxtr:informationArtifact .
+
+IAO:0000009 rdfs:subClassOf ilxtr:informationArtifact .
+
+IAO:0000027 rdfs:subClassOf ilxtr:informationArtifact .
+
+IAO:0000028 rdfs:subClassOf ilxtr:informationArtifact .
+
+IAO:0000030 rdfs:subClassOf ilxtr:informationEntity .
+
+IAO:0000033 rdfs:subClassOf ilxtr:informationArtifact .
+
+IAO:0000178 rdfs:subClassOf ilxtr:materialEntity .
+
+IAO:0000300 rdfs:subClassOf ilxtr:informationArtifact .
+
+IAO:0000308 rdfs:subClassOf ilxtr:informationArtifact .
+
+IAO:0000310 rdfs:subClassOf ilxtr:informationArtifact .
+
+IAO:0000314 rdfs:subClassOf ilxtr:informationArtifact .
+
+IAO:0000429 rdfs:subClassOf ilxtr:informationArtifact .
+
+IAO:0000442 rdfs:subClassOf CHEBI:50906 .
+
+IAO:0020000 rdfs:subClassOf ilxtr:informationArtifact .
+
+IAO:0020001 rdfs:subClassOf ilxtr:informationArtifact .
+
+IAO:0020020 rdfs:subClassOf ilxtr:informationArtifact .
+
+ilxtr:axon rdfs:subClassOf BFO:0000040 .
+
+ilxtr:bathSolution rdfs:subClassOf BFO:0000040 .
+
+ilxtr:building rdfs:subClassOf BFO:0000040 .
+
+ilxtr:cellMembrane rdfs:subClassOf BFO:0000040 .
+
+ilxtr:centrifuge rdfs:subClassOf BFO:0000040 .
+
+ilxtr:compositeMaterialEntity rdfs:subClassOf BFO:0000040 .
+
+ilxtr:contrastAgent rdfs:subClassOf BFO:0000040 .
+
+ilxtr:cultureMedia rdfs:subClassOf BFO:0000040 .
+
+ilxtr:cuttingTool rdfs:subClassOf BFO:0000040 .
+
+ilxtr:detectedPhenomena rdfs:subClassOf BFO:0000040 .
+
+ilxtr:DICmicroscope rdfs:subClassOf BIRNLEX:2112 .
+
+ilxtr:DNA rdfs:subClassOf CHEBI:33696 .
+
+ilxtr:electricalGround rdfs:subClassOf BFO:0000040 .
+
+ilxtr:electrolytes rdfs:subClassOf BFO:0000040 .
+
+ilxtr:ephysRig rdfs:subClassOf BFO:0000040 .
+
+ilxtr:executor rdfs:subClassOf BFO:0000040 .
+
+ilxtr:fluorescentMolecule rdfs:subClassOf BFO:0000040 .
+
+ilxtr:food_and_water rdfs:subClassOf BFO:0000040 .
+
+ilxtr:hybridizationProbe rdfs:subClassOf SO:0000352 .
+
+ilxtr:image rdfs:subClassOf IAO:0000030 .
+
+ilxtr:inductionFactor rdfs:subClassOf BFO:0000040 .
+
+ilxtr:IRCamera rdfs:subClassOf BFO:0000040 .
+
+ilxtr:lightSheetMicroscope rdfs:subClassOf BIRNLEX:2112 .
+
+ilxtr:materialEntity rdfs:subClassOf BFO:0000004 .
+
+ilxtr:methylatedDNA rdfs:subClassOf ilxtr:DNA .
+
+ilxtr:microPipette rdfs:subClassOf BFO:0000040 .
+
+ilxtr:microscope rdfs:subClassOf BFO:0000040 .
+
+ilxtr:microtome rdfs:subClassOf BFO:0000040 .
+
+ilxtr:molecule rdfs:subClassOf CHEBI:36357 .
+
+ilxtr:nucleicAcid rdfs:subClassOf CHEBI:15986 .
+
+ilxtr:nucleicAcidLibrary rdfs:subClassOf BFO:0000040 .
+
+ilxtr:opticalFiber rdfs:subClassOf BFO:0000040 .
+
+ilxtr:optrode rdfs:subClassOf BFO:0000040 .
+
+ilxtr:parcellationArtifact rdfs:subClassOf IAO:0000030 .
+
+ilxtr:parcellationAtlas rdfs:subClassOf IAO:0000030 .
+
+ilxtr:partOfSomePrimaryInput rdfs:subClassOf BFO:0000040,
+        ilxtr:materialEntity .
+
+ilxtr:photons rdfs:subClassOf BFO:0000040 .
+
+ilxtr:physicalForce rdfs:subClassOf BFO:0000040 .
+
+ilxtr:physiologicalSystem rdfs:subClassOf BFO:0000040 .
+
+ilxtr:plasmidDNA rdfs:subClassOf SO:0000352 .
+
+ilxtr:primaryHeritableGeneticMaterial rdfs:subClassOf SO:0000352 .
+
+ilxtr:protocolArtifact rdfs:subClassOf IAO:0000030 .
+
+ilxtr:protocolExecution rdfs:subClassOf ilxtr:technique .
+
+ilxtr:recordingElectrode rdfs:subClassOf BFO:0000040 .
+
+ilxtr:section rdfs:subClassOf ilxtr:partOfSomePrimaryInput .
+
+ilxtr:stereotax rdfs:subClassOf BFO:0000040 .
+
+ilxtr:thingWithSequence rdfs:subClassOf ilxtr:molecule .
+
+ilxtr:timeSeries rdfs:subClassOf IAO:0000030 .
+
+ilxtr:tissue rdfs:subClassOf BFO:0000040 .
+
+ilxtr:water rdfs:subClassOf BFO:0000040 .
+
+NCBITaxon:6231 rdfs:subClassOf BIRNLEX:199 .
+
+NCBITaxon:6239 rdfs:subClassOf BIRNLEX:448 .
+
+NCBITaxon:6340 rdfs:subClassOf BIRNLEX:342 .
+
+NCBITaxon:6341 rdfs:subClassOf BIRNLEX:354 .
+
+NCBITaxon:6406 rdfs:subClassOf BIRNLEX:374 .
+
+NCBITaxon:6433 rdfs:subClassOf BIRNLEX:354 .
+
+NCBITaxon:6447 rdfs:subClassOf BIRNLEX:334 .
+
+NCBITaxon:6448 rdfs:subClassOf BIRNLEX:428 .
+
+NCBITaxon:6499 rdfs:subClassOf BIRNLEX:458 .
+
+NCBITaxon:6500 rdfs:subClassOf BIRNLEX:464 .
+
+NCBITaxon:6501 rdfs:subClassOf BIRNLEX:464 .
+
+NCBITaxon:6534 rdfs:subClassOf BIRNLEX:7239 .
+
+NCBITaxon:6536 rdfs:subClassOf BIRNLEX:7240 .
+
+NCBITaxon:6544 rdfs:subClassOf BIRNLEX:428 .
+
+NCBITaxon:6605 rdfs:subClassOf BIRNLEX:428 .
+
+NCBITaxon:6656 rdfs:subClassOf BIRNLEX:527 .
+
+NCBITaxon:6657 rdfs:subClassOf BIRNLEX:555 .
+
+NCBITaxon:6658 rdfs:subClassOf BIRNLEX:278 .
+
+NCBITaxon:6693 rdfs:subClassOf BIRNLEX:191 .
+
+NCBITaxon:6762 rdfs:subClassOf BIRNLEX:628 .
+
+NCBITaxon:6843 rdfs:subClassOf BIRNLEX:541 .
+
+NCBITaxon:6995 rdfs:subClassOf BIRNLEX:446 .
+
+NCBITaxon:7215 rdfs:subClassOf BIRNLEX:140 .
+
+NCBITaxon:7460 rdfs:subClassOf BIRNLEX:442 .
+
+NCBITaxon:7469 rdfs:subClassOf BIRNLEX:447 .
+
+NCBITaxon:7742 rdfs:subClassOf BIRNLEX:222 .
+
+NCBITaxon:7776 rdfs:subClassOf BIRNLEX:212 .
+
+NCBITaxon:8292 rdfs:subClassOf BIRNLEX:387 .
+
+NCBITaxon:8445 rdfs:subClassOf BIRNLEX:394 .
+
+NCBITaxon:8782 rdfs:subClassOf BIRNLEX:243 .
+
+NCBITaxon:8783 rdfs:subClassOf BIRNLEX:142 .
+
+NCBITaxon:8825 rdfs:subClassOf BIRNLEX:142 .
+
+NCBITaxon:9254 rdfs:subClassOf BIRNLEX:252 .
+
+NCBITaxon:9479 rdfs:subClassOf BIRNLEX:256 .
+
+NCBITaxon:9498 rdfs:subClassOf BIRNLEX:127 .
+
+NCBITaxon:9504 rdfs:subClassOf BIRNLEX:353 .
+
+NCBITaxon:9505 rdfs:subClassOf BIRNLEX:365 .
+
+NCBITaxon:9513 rdfs:subClassOf BIRNLEX:580 .
+
+NCBITaxon:9514 rdfs:subClassOf BIRNLEX:588 .
+
+NCBITaxon:9516 rdfs:subClassOf BIRNLEX:588 .
+
+NCBITaxon:9520 rdfs:subClassOf BIRNLEX:116 .
+
+NCBITaxon:9521 rdfs:subClassOf BIRNLEX:123 .
+
+NCBITaxon:9527 rdfs:subClassOf BIRNLEX:468 .
+
+NCBITaxon:9528 rdfs:subClassOf BIRNLEX:463 .
+
+NCBITaxon:9539 rdfs:subClassOf BIRNLEX:524 .
+
+NCBITaxon:9540 rdfs:subClassOf BIRNLEX:280 .
+
+NCBITaxon:9541 rdfs:subClassOf BIRNLEX:280 .
+
+NCBITaxon:9542 rdfs:subClassOf BIRNLEX:280 .
+
+NCBITaxon:9544 rdfs:subClassOf BIRNLEX:280 .
+
+NCBITaxon:9545 rdfs:subClassOf BIRNLEX:280 .
+
+NCBITaxon:9546 rdfs:subClassOf BIRNLEX:280 .
+
+NCBITaxon:9548 rdfs:subClassOf BIRNLEX:280 .
+
+NCBITaxon:9551 rdfs:subClassOf BIRNLEX:280 .
+
+NCBITaxon:9554 rdfs:subClassOf BIRNLEX:524 .
+
+NCBITaxon:9555 rdfs:subClassOf BIRNLEX:120 .
+
+NCBITaxon:9556 rdfs:subClassOf BIRNLEX:120 .
+
+NCBITaxon:9557 rdfs:subClassOf BIRNLEX:120 .
+
+NCBITaxon:9569 rdfs:subClassOf BIRNLEX:463 .
+
+NCBITaxon:9606 rdfs:subClassOf BIRNLEX:232 .
+
+NCBITaxon:9615 rdfs:subClassOf BIRNLEX:667 .
+
+NCBITaxon:9685 rdfs:subClassOf BIRNLEX:108 .
+
+NCBITaxon:9938 rdfs:subClassOf BIRNLEX:450 .
+
+NCBITaxon:9940 rdfs:subClassOf BIRNLEX:549 .
+
+NCBITaxon:9989 rdfs:subClassOf BIRNLEX:233 .
+
+NCBITaxon:10090 rdfs:subClassOf BIRNLEX:518 .
+
+NCBITaxon:10091 rdfs:subClassOf BIRNLEX:167 .
+
+NCBITaxon:10092 rdfs:subClassOf BIRNLEX:167 .
+
+NCBITaxon:10116 rdfs:subClassOf BIRNLEX:121 .
+
+NCBITaxon:27386 rdfs:subClassOf BIRNLEX:374 .
+
+NCBITaxon:27679 rdfs:subClassOf BIRNLEX:123 .
+
+NCBITaxon:30591 rdfs:subClassOf BIRNLEX:365 .
+
+NCBITaxon:32280 rdfs:subClassOf BIRNLEX:147 .
+
+NCBITaxon:32281 rdfs:subClassOf BIRNLEX:147 .
+
+NCBITaxon:32341 rdfs:subClassOf BIRNLEX:147 .
+
+NCBITaxon:32525 rdfs:subClassOf BIRNLEX:252 .
+
+NCBITaxon:33550 rdfs:subClassOf BIRNLEX:263 .
+
+NCBITaxon:33553 rdfs:subClassOf BIRNLEX:263 .
+
+NCBITaxon:35531 rdfs:subClassOf BIRNLEX:167 .
+
+NCBITaxon:36229 rdfs:subClassOf BIRNLEX:120 .
+
+NCBITaxon:37293 rdfs:subClassOf BIRNLEX:365 .
+
+NCBITaxon:39442 rdfs:subClassOf BIRNLEX:167 .
+
+NCBITaxon:40674 rdfs:subClassOf BIRNLEX:264 .
+
+NCBITaxon:40843 rdfs:subClassOf BIRNLEX:280 .
+
+NCBITaxon:41666 rdfs:subClassOf BIRNLEX:394 .
+
+NCBITaxon:42113 rdfs:subClassOf BIRNLEX:354 .
+
+NCBITaxon:43147 rdfs:subClassOf BIRNLEX:365 .
+
+NCBITaxon:50557 rdfs:subClassOf BIRNLEX:565 .
+
+NCBITaxon:54600 rdfs:subClassOf BIRNLEX:280 .
+
+NCBITaxon:54602 rdfs:subClassOf BIRNLEX:280 .
+
+NCBITaxon:55824 rdfs:subClassOf BIRNLEX:364 .
+
+NCBITaxon:57175 rdfs:subClassOf BIRNLEX:365 .
+
+NCBITaxon:57176 rdfs:subClassOf BIRNLEX:365 .
+
+NCBITaxon:57486 rdfs:subClassOf BIRNLEX:167 .
+
+NCBITaxon:58312 rdfs:subClassOf BIRNLEX:147 .
+
+NCBITaxon:63221 rdfs:subClassOf BIRNLEX:516 .
+
+NCBITaxon:70852 rdfs:subClassOf BIRNLEX:7264 .
+
+NCBITaxon:85512 rdfs:subClassOf BIRNLEX:275 .
+
+NCBITaxon:85823 rdfs:subClassOf BIRNLEX:119 .
+
+NCBITaxon:116058 rdfs:subClassOf BIRNLEX:167 .
+
+NCBITaxon:119088 rdfs:subClassOf BIRNLEX:578 .
+
+NCBITaxon:119089 rdfs:subClassOf BIRNLEX:578 .
+
+NCBITaxon:144766 rdfs:subClassOf BIRNLEX:464 .
+
+NCBITaxon:197563 rdfs:subClassOf BIRNLEX:541 .
+
+NCBITaxon:205592 rdfs:subClassOf BIRNLEX:7246 .
+
+NCBITaxon:216331 rdfs:subClassOf BIRNLEX:7242 .
+
+NCBITaxon:376918 rdfs:subClassOf BIRNLEX:127 .
+
+NCBITaxon:376919 rdfs:subClassOf BIRNLEX:127 .
+
+NCBITaxon:378855 rdfs:subClassOf BIRNLEX:127 .
+
+NCBITaxon:477815 rdfs:subClassOf BIRNLEX:167 .
+
+NCBITaxon:504493 rdfs:subClassOf BIRNLEX:147 .
+
+NCBITaxon:1049656 rdfs:subClassOf BIRNLEX:409 .
+
+NCBITaxon:1049657 rdfs:subClassOf BIRNLEX:409 .
+
+NCBITaxon:1476529 rdfs:subClassOf BIRNLEX:212 .
+
+NCBITaxon:1963757 rdfs:subClassOf BIRNLEX:263 .
+
+NCBITaxon:1963758 rdfs:subClassOf BIRNLEX:263 .
+
+NCBITaxon:1963759 rdfs:subClassOf BIRNLEX:263 .
+
+NCBITaxon:2172821 rdfs:subClassOf BIRNLEX:278 .
+
+NCBITaxon:2218736 rdfs:subClassOf BIRNLEX:374 .
+
+NLXORG:090701 rdfs:subClassOf NCBITaxon:7215 .
+
+NLXORG:090806 rdfs:subClassOf NLXORG:110506 .
+
+NLXORG:110506 rdfs:subClassOf BFO:0000040,
+        ilxtr:materialEntity .
+
+NLXORG:110519 rdfs:subClassOf BIRNLEX:610 .
+
+NLXORG:20081201 rdfs:subClassOf NCBITaxon:10116 .
+
+obo:CARO_0000006 rdfs:subClassOf ilxtr:materialEntity .
+
+obo:CARO_0001010 rdfs:subClassOf ilxtr:materialEntity .
+
+obo:PCO_0000031 rdfs:subClassOf ilxtr:materialEntity .
+
+PR:000000001 rdfs:subClassOf CHEBI:33695,
+        PR:000018263 .
+
+RO:0002577 rdfs:subClassOf ilxtr:materialEntity .
+
+SAO:1813327414 rdfs:subClassOf BFO:0000040 .
+
+SO:0000234 rdfs:subClassOf ilxtr:RNA .
+
+UBERON:0000010 rdfs:subClassOf UBERON:0011216 .
+
+UBERON:0000011 rdfs:subClassOf UBERON:0011216 .
+
+UBERON:0000012 rdfs:subClassOf UBERON:0011216 .
+
+UBERON:0000013 rdfs:subClassOf UBERON:0011216 .
+
+UBERON:0000014 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0034944 .
+
+UBERON:0000015 rdfs:subClassOf UBERON:0000466 .
+
+UBERON:0000016 rdfs:subClassOf UBERON:0000471 .
+
+UBERON:0000043 rdfs:subClassOf UBERON:0007846 .
+
+UBERON:0000045 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0000061 .
+
+UBERON:0000059 rdfs:subClassOf UBERON:0004921 .
+
+UBERON:0000065 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0000075 rdfs:subClassOf UBERON:0011216 .
+
+UBERON:0000076 rdfs:subClassOf UBERON:0000490 .
+
+UBERON:0000087 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0000088 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0000091 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0000115 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0000118 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0005153 .
+
+UBERON:0000159 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0000160 rdfs:subClassOf UBERON:0004921 .
+
+UBERON:0000163 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0000165 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0004921 .
+
+UBERON:0000166 rdfs:subClassOf UBERON:0000161 .
+
+UBERON:0000168 rdfs:subClassOf UBERON:0004921 .
+
+UBERON:0000170 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0000178 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0000304 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0000307 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0000325 rdfs:subClassOf UBERON:0002365 .
+
+UBERON:0000332 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0000358 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0000378 rdfs:subClassOf obo:CARO_0000003 .
+
+UBERON:0000383 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0000475 rdfs:subClassOf UBERON:0010000 .
+
+UBERON:0000479 rdfs:subClassOf UBERON:0010000 .
+
+UBERON:0000481 rdfs:subClassOf UBERON:0010000 .
+
+UBERON:0000915 rdfs:subClassOf obo:CARO_0000003,
+        UBERON:0009569 .
+
+UBERON:0000926 rdfs:subClassOf UBERON:0000923 .
+
+UBERON:0000931 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0016566 .
+
+UBERON:0000945 rdfs:subClassOf UBERON:0004921,
+        UBERON:0010039 .
+
+UBERON:0000947 rdfs:subClassOf UBERON:0003509 .
+
+UBERON:0000955 rdfs:subClassOf UBERON:0000062 .
+
+UBERON:0000956 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0016548 .
+
+UBERON:0000964 rdfs:subClassOf obo:CARO_0000006 .
+
+UBERON:0000965 rdfs:subClassOf obo:CARO_0000006 .
+
+UBERON:0000971 rdfs:subClassOf UBERON:0000970 .
+
+UBERON:0000990 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0000991 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0000995 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0013515 .
+
+UBERON:0001013 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0011822 .
+
+UBERON:0001015 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0001016 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0001017 rdfs:subClassOf UBERON:0011216 .
+
+UBERON:0001021 rdfs:subClassOf UBERON:0000122 .
+
+UBERON:0001040 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0005631,
+        UBERON:0007499 .
+
+UBERON:0001042 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0001043 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0001046 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0001048 rdfs:subClassOf UBERON:0005423 .
+
+UBERON:0001049 rdfs:subClassOf UBERON:0003914 .
+
+UBERON:0001052 rdfs:subClassOf UBERON:0004921 .
+
+UBERON:0001064 rdfs:subClassOf UBERON:0007329 .
+
+UBERON:0001068 rdfs:subClassOf UBERON:0001085 .
+
+UBERON:0001070 rdfs:subClassOf UBERON:0005396 .
+
+UBERON:0001074 rdfs:subClassOf UBERON:0002323 .
+
+UBERON:0001090 rdfs:subClassOf UBERON:0007794 .
+
+UBERON:0001103 rdfs:subClassOf obo:CARO_0000003 .
+
+UBERON:0001113 rdfs:subClassOf UBERON:0009912 .
+
+UBERON:0001152 rdfs:subClassOf UBERON:0003703 .
+
+UBERON:0001155 rdfs:subClassOf UBERON:0004921 .
+
+UBERON:0001159 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0000168 .
+
+UBERON:0001161 rdfs:subClassOf UBERON:0009870 .
+
+UBERON:0001165 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0009870 .
+
+UBERON:0001166 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0001170 rdfs:subClassOf UBERON:0007826 .
+
+UBERON:0001171 rdfs:subClassOf UBERON:0009911 .
+
+UBERON:0001175 rdfs:subClassOf UBERON:0003703 .
+
+UBERON:0001179 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0001212 rdfs:subClassOf UBERON:0011148 .
+
+UBERON:0001213 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0004923 .
+
+UBERON:0001246 rdfs:subClassOf UBERON:0003704 .
+
+UBERON:0001263 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0001264 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0001268 rdfs:subClassOf UBERON:0007794 .
+
+UBERON:0001279 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0001282 rdfs:subClassOf UBERON:0003704 .
+
+UBERON:0001325 rdfs:subClassOf UBERON:0003833 .
+
+UBERON:0001353 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0001366 rdfs:subClassOf obo:CARO_0000003 .
+
+UBERON:0001456 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0001474 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0001484 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0001514 rdfs:subClassOf UBERON:0005800 .
+
+UBERON:0001515 rdfs:subClassOf UBERON:0005800 .
+
+UBERON:0001530 rdfs:subClassOf UBERON:0004573 .
+
+UBERON:0001531 rdfs:subClassOf UBERON:0001530 .
+
+UBERON:0001532 rdfs:subClassOf UBERON:0005396 .
+
+UBERON:0001536 rdfs:subClassOf UBERON:0001530 .
+
+UBERON:0001555 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0001558 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0001571 rdfs:subClassOf UBERON:0001575 .
+
+UBERON:0001572 rdfs:subClassOf UBERON:0001575 .
+
+UBERON:0001575 rdfs:subClassOf UBERON:0000378 .
+
+UBERON:0001576 rdfs:subClassOf UBERON:0000378 .
+
+UBERON:0001605 rdfs:subClassOf UBERON:0003386,
+        UBERON:0011222 .
+
+UBERON:0001606 rdfs:subClassOf UBERON:0011222 .
+
+UBERON:0001607 rdfs:subClassOf obo:CARO_0000003,
+        UBERON:0004234 .
+
+UBERON:0001608 rdfs:subClassOf obo:CARO_0000003,
+        UBERON:0004234 .
+
+UBERON:0001639 rdfs:subClassOf UBERON:0002017 .
+
+UBERON:0001645 rdfs:subClassOf obo:CARO_0001001 .
+
+UBERON:0001649 rdfs:subClassOf obo:CARO_0001001 .
+
+UBERON:0001650 rdfs:subClassOf obo:CARO_0001001 .
+
+UBERON:0001675 rdfs:subClassOf UBERON:0001800 .
+
+UBERON:0001676 rdfs:subClassOf UBERON:0010428 .
+
+UBERON:0001678 rdfs:subClassOf UBERON:0008193 .
+
+UBERON:0001685 rdfs:subClassOf UBERON:0008001 .
+
+UBERON:0001701 rdfs:subClassOf UBERON:0009127 .
+
+UBERON:0001703 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0011158 .
+
+UBERON:0001708 rdfs:subClassOf obo:CARO_0000003 .
+
+UBERON:0001710 rdfs:subClassOf obo:CARO_0000003 .
+
+UBERON:0001723 rdfs:subClassOf UBERON:0000020 .
+
+UBERON:0001725 rdfs:subClassOf UBERON:0002215 .
+
+UBERON:0001731 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0001737 rdfs:subClassOf obo:CARO_0000003 .
+
+UBERON:0001743 rdfs:subClassOf UBERON:0008845 .
+
+UBERON:0001766 rdfs:subClassOf UBERON:0006311 .
+
+UBERON:0001768 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0004923 .
+
+UBERON:0001772 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0001773 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0001777 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0001778 rdfs:subClassOf UBERON:0000488 .
+
+UBERON:0001785 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0001833 rdfs:subClassOf UBERON:0003102 .
+
+UBERON:0001835 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0001980 rdfs:subClassOf UBERON:0003509 .
+
+UBERON:0001981 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0001986 rdfs:subClassOf UBERON:0000487 .
+
+UBERON:0001987 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0001994 rdfs:subClassOf UBERON:0002418 .
+
+UBERON:0002017 rdfs:subClassOf UBERON:0001638 .
+
+UBERON:0002025 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0002031 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0002048 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0002049 rdfs:subClassOf UBERON:0000477 .
+
+UBERON:0002061 rdfs:subClassOf UBERON:0001637,
+        UBERON:0002050 .
+
+UBERON:0002090 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0002097 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0002106 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0002107 rdfs:subClassOf UBERON:0002365 .
+
+UBERON:0002108 rdfs:subClassOf UBERON:0004921 .
+
+UBERON:0002110 rdfs:subClassOf UBERON:0018707 .
+
+UBERON:0002114 rdfs:subClassOf UBERON:0004921 .
+
+UBERON:0002193 rdfs:subClassOf UBERON:0000467 .
+
+UBERON:0002199 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0011216 .
+
+UBERON:0002203 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0002204 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0002209 rdfs:subClassOf UBERON:0011134 .
+
+UBERON:0002213 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0011134 .
+
+UBERON:0002216 rdfs:subClassOf UBERON:0002209,
+        UBERON:0002213 .
+
+UBERON:0002294 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0002323 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0002328 rdfs:subClassOf UBERON:0000062,
+        UBERON:0000481 .
+
+UBERON:0002329 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0007503 .
+
+UBERON:0002333 rdfs:subClassOf UBERON:0001637 .
+
+UBERON:0002348 rdfs:subClassOf obo:CARO_0000003 .
+
+UBERON:0002350 rdfs:subClassOf UBERON:0010131 .
+
+UBERON:0002351 rdfs:subClassOf UBERON:0010131 .
+
+UBERON:0002352 rdfs:subClassOf UBERON:0010131 .
+
+UBERON:0002354 rdfs:subClassOf UBERON:0010131 .
+
+UBERON:0002355 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0002357 rdfs:subClassOf obo:CARO_0000003 .
+
+UBERON:0002359 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0000094 .
+
+UBERON:0002360 rdfs:subClassOf UBERON:0000094 .
+
+UBERON:0002376 rdfs:subClassOf obo:CARO_0000003 .
+
+UBERON:0002400 rdfs:subClassOf obo:CARO_0000003 .
+
+UBERON:0002401 rdfs:subClassOf obo:CARO_0000003 .
+
+UBERON:0002402 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0002407 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0002409 rdfs:subClassOf UBERON:0007794 .
+
+UBERON:0002410 rdfs:subClassOf UBERON:0011216 .
+
+UBERON:0002416 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0002417 rdfs:subClassOf UBERON:0009569 .
+
+UBERON:0002423 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0002425 rdfs:subClassOf obo:CARO_0000003 .
+
+UBERON:0002451 rdfs:subClassOf UBERON:0000414 .
+
+UBERON:0002481 rdfs:subClassOf UBERON:0004755 .
+
+UBERON:0002506 rdfs:subClassOf UBERON:0000488 .
+
+UBERON:0002513 rdfs:subClassOf UBERON:0010363 .
+
+UBERON:0002514 rdfs:subClassOf UBERON:0001474 .
+
+UBERON:0002522 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0004797 .
+
+UBERON:0002523 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0004923 .
+
+UBERON:0002539 rdfs:subClassOf obo:CARO_0000006,
+        UBERON:0010188 .
+
+UBERON:0002546 rdfs:subClassOf UBERON:0005085 .
+
+UBERON:0002616 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0003023 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0003052 rdfs:subClassOf UBERON:0007651 .
+
+UBERON:0003055 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0000487 .
+
+UBERON:0003063 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0003064 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0003067 rdfs:subClassOf UBERON:0009955 .
+
+UBERON:0003068 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0003070 rdfs:subClassOf UBERON:0003067 .
+
+UBERON:0003071 rdfs:subClassOf UBERON:0000490 .
+
+UBERON:0003072 rdfs:subClassOf obo:CARO_0000006 .
+
+UBERON:0003073 rdfs:subClassOf obo:CARO_0000006,
+        UBERON:0011814 .
+
+UBERON:0003075 rdfs:subClassOf obo:CARO_0000006 .
+
+UBERON:0003076 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0003077 rdfs:subClassOf UBERON:0007524 .
+
+UBERON:0003078 rdfs:subClassOf UBERON:0009955 .
+
+UBERON:0003080 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0003081 rdfs:subClassOf UBERON:0007524 .
+
+UBERON:0003082 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0017650 .
+
+UBERON:0003083 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0003084 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0001048 .
+
+UBERON:0003089 rdfs:subClassOf UBERON:0005856,
+        UBERON:0007530 .
+
+UBERON:0003099 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0003124 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0003126 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0003128 rdfs:subClassOf UBERON:0000075 .
+
+UBERON:0003129 rdfs:subClassOf UBERON:0000075 .
+
+UBERON:0003257 rdfs:subClassOf UBERON:0000478 .
+
+UBERON:0003265 rdfs:subClassOf UBERON:0000478,
+        UBERON:0007524 .
+
+UBERON:0003278 rdfs:subClassOf obo:CARO_0000003 .
+
+UBERON:0003281 rdfs:subClassOf UBERON:0004854 .
+
+UBERON:0003304 rdfs:subClassOf UBERON:0007503 .
+
+UBERON:0003314 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0003324 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0003371 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0003372 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0003374 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0003396 rdfs:subClassOf UBERON:0007826 .
+
+UBERON:0003438 rdfs:subClassOf obo:CARO_0001001 .
+
+UBERON:0003566 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0003685 rdfs:subClassOf obo:CARO_0000006,
+        UBERON:0009198 .
+
+UBERON:0003704 rdfs:subClassOf UBERON:0002394 .
+
+UBERON:0003714 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0003715 rdfs:subClassOf obo:CARO_0001001 .
+
+UBERON:0003721 rdfs:subClassOf obo:CARO_0001001 .
+
+UBERON:0003848 rdfs:subClassOf obo:CARO_0000003 .
+
+UBERON:0003849 rdfs:subClassOf UBERON:0003099 .
+
+UBERON:0003852 rdfs:subClassOf UBERON:0003099 .
+
+UBERON:0003886 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0003887 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0003894 rdfs:subClassOf UBERON:0000485,
+        UBERON:0001048 .
+
+UBERON:0003897 rdfs:subClassOf obo:CARO_0000003 .
+
+UBERON:0003902 rdfs:subClassOf obo:CARO_0000006 .
+
+UBERON:0003909 rdfs:subClassOf UBERON:2005260 .
+
+UBERON:0003922 rdfs:subClassOf UBERON:0007499 .
+
+UBERON:0003984 rdfs:subClassOf UBERON:0013515 .
+
+UBERON:0004016 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0017650 .
+
+UBERON:0004022 rdfs:subClassOf UBERON:0034706 .
+
+UBERON:0004035 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0004040 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0004060 rdfs:subClassOf UBERON:0034706 .
+
+UBERON:0004061 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0034707 .
+
+UBERON:0004062 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0004064 rdfs:subClassOf obo:CARO_0000006 .
+
+UBERON:0004119 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0004120 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0004121 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0004122 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0004128 rdfs:subClassOf obo:CARO_0000006 .
+
+UBERON:0004139 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0004146 rdfs:subClassOf UBERON:0010131 .
+
+UBERON:0004148 rdfs:subClassOf UBERON:0013140 .
+
+UBERON:0004234 rdfs:subClassOf UBERON:0003386 .
+
+UBERON:0004290 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0000486,
+        UBERON:0016888 .
+
+UBERON:0004293 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0004340 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0004345 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0000490 .
+
+UBERON:0004356 rdfs:subClassOf obo:CARO_0000006 .
+
+UBERON:0004370 rdfs:subClassOf obo:CARO_0000003 .
+
+UBERON:0004455 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0004461 rdfs:subClassOf obo:CARO_0000003 .
+
+UBERON:0004535 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0004537 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0004571 rdfs:subClassOf UBERON:0007798 .
+
+UBERON:0004572 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0007798 .
+
+UBERON:0004582 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0007798 .
+
+UBERON:0004647 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0000064 .
+
+UBERON:0004666 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0004708 rdfs:subClassOf obo:CARO_0000003,
+        UBERON:0000026 .
+
+UBERON:0004716 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0004734 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0004742 rdfs:subClassOf UBERON:0008907 .
+
+UBERON:0004755 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0002384 .
+
+UBERON:0004761 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0000075 .
+
+UBERON:0004820 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0004907 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0004908 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0004912 rdfs:subClassOf UBERON:0007499 .
+
+UBERON:0005075 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0005090 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0005092 rdfs:subClassOf UBERON:0002050 .
+
+UBERON:0005343 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0005362 rdfs:subClassOf UBERON:0009127 .
+
+UBERON:0005396 rdfs:subClassOf UBERON:0004573 .
+
+UBERON:0005426 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0005427 rdfs:subClassOf UBERON:0000479,
+        UBERON:0001048 .
+
+UBERON:0005432 rdfs:subClassOf UBERON:0001637 .
+
+UBERON:0005497 rdfs:subClassOf UBERON:0000479 .
+
+UBERON:0005563 rdfs:subClassOf UBERON:0003099,
+        UBERON:0007530 .
+
+UBERON:0005564 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0001048 .
+
+UBERON:0005597 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0001048 .
+
+UBERON:0005602 rdfs:subClassOf UBERON:0003281 .
+
+UBERON:0005728 rdfs:subClassOf UBERON:0007524 .
+
+UBERON:0005732 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0005734 rdfs:subClassOf UBERON:0004797 .
+
+UBERON:0005769 rdfs:subClassOf UBERON:0005764 .
+
+UBERON:0005856 rdfs:subClassOf UBERON:0007524,
+        UBERON:0011585 .
+
+UBERON:0005863 rdfs:subClassOf UBERON:0005856 .
+
+UBERON:0005866 rdfs:subClassOf UBERON:0005856 .
+
+UBERON:0005867 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0005906 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0005913 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0034944 .
+
+UBERON:0005944 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0005953 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0005971 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0006207 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0006211 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0006260 rdfs:subClassOf UBERON:0010188 .
+
+UBERON:0006267 rdfs:subClassOf UBERON:0000490 .
+
+UBERON:0006268 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0006279 rdfs:subClassOf UBERON:0003914 .
+
+UBERON:0006293 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0001048 .
+
+UBERON:0006598 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0006606 rdfs:subClassOf UBERON:0002216 .
+
+UBERON:0006670 rdfs:subClassOf obo:CARO_0000003 .
+
+UBERON:0006756 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0006757 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0006815 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0011825 .
+
+UBERON:0006866 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0006904 rdfs:subClassOf UBERON:0005253 .
+
+UBERON:0006924 rdfs:subClassOf UBERON:0006929 .
+
+UBERON:0006960 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0006965 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0006984 rdfs:subClassOf UBERON:0010199 .
+
+UBERON:0007005 rdfs:subClassOf obo:CARO_0000006 .
+
+UBERON:0007098 rdfs:subClassOf UBERON:0003099 .
+
+UBERON:0007099 rdfs:subClassOf UBERON:0003099 .
+
+UBERON:0007106 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0007195 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0007196 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0007213 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0005253 .
+
+UBERON:0007214 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0007240 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0007324 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0007329 rdfs:subClassOf UBERON:0003928 .
+
+UBERON:0007376 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0007383 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0007499 rdfs:subClassOf UBERON:0003914 .
+
+UBERON:0007500 rdfs:subClassOf UBERON:0003914 .
+
+UBERON:0007503 rdfs:subClassOf UBERON:0000483 .
+
+UBERON:0007524 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0003104 .
+
+UBERON:0007589 rdfs:subClassOf UBERON:0004804,
+        UBERON:0007592 .
+
+UBERON:0007590 rdfs:subClassOf UBERON:0004804 .
+
+UBERON:0007592 rdfs:subClassOf UBERON:0000485 .
+
+UBERON:0007641 rdfs:subClassOf UBERON:0007245 .
+
+UBERON:0007651 rdfs:subClassOf UBERON:0000061 .
+
+UBERON:0007688 rdfs:subClassOf UBERON:0000479,
+        UBERON:0005423 .
+
+UBERON:0007691 rdfs:subClassOf UBERON:0000161 .
+
+UBERON:0007779 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0007811 rdfs:subClassOf UBERON:0000475 .
+
+UBERON:0007823 rdfs:subClassOf obo:CARO_0000003 .
+
+UBERON:0007829 rdfs:subClassOf UBERON:0007828 .
+
+UBERON:0007830 rdfs:subClassOf UBERON:0007828 .
+
+UBERON:0007842 rdfs:subClassOf UBERON:0001474 .
+
+UBERON:0007844 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0004765 .
+
+UBERON:0007845 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0002384 .
+
+UBERON:0007846 rdfs:subClassOf UBERON:0007845,
+        UBERON:0011823 .
+
+UBERON:0007914 rdfs:subClassOf UBERON:0001474 .
+
+UBERON:0008001 rdfs:subClassOf UBERON:0001474 .
+
+UBERON:0008114 rdfs:subClassOf UBERON:0000982 .
+
+UBERON:0008229 rdfs:subClassOf UBERON:0001015 .
+
+UBERON:0008243 rdfs:subClassOf UBERON:0003830 .
+
+UBERON:0008780 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0008823 rdfs:subClassOf UBERON:0000489 .
+
+UBERON:0008835 rdfs:subClassOf UBERON:0007499 .
+
+UBERON:0008836 rdfs:subClassOf UBERON:0007499 .
+
+UBERON:0008845 rdfs:subClassOf UBERON:0000211 .
+
+UBERON:0008846 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0008858 rdfs:subClassOf UBERON:0009870 .
+
+UBERON:0008861 rdfs:subClassOf UBERON:0000414 .
+
+UBERON:0008876 rdfs:subClassOf obo:CARO_0000003 .
+
+UBERON:0008883 rdfs:subClassOf UBERON:0002481 .
+
+UBERON:0008886 rdfs:subClassOf UBERON:0007798 .
+
+UBERON:0008907 rdfs:subClassOf UBERON:0004756,
+        UBERON:0007842 .
+
+UBERON:0008909 rdfs:subClassOf UBERON:0012075 .
+
+UBERON:0008946 rdfs:subClassOf UBERON:0000353 .
+
+UBERON:0008947 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0001048 .
+
+UBERON:0009015 rdfs:subClassOf UBERON:0001418 .
+
+UBERON:0009125 rdfs:subClassOf UBERON:0003078 .
+
+UBERON:0009127 rdfs:subClassOf UBERON:0001714 .
+
+UBERON:0009133 rdfs:subClassOf UBERON:0002050 .
+
+UBERON:0009142 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0009196 rdfs:subClassOf UBERON:0004176 .
+
+UBERON:0009494 rdfs:subClassOf UBERON:0007524 .
+
+UBERON:0009505 rdfs:subClassOf UBERON:0007524 .
+
+UBERON:0009576 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0009644 rdfs:subClassOf UBERON:0003571 .
+
+UBERON:0009670 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0009708 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0002365 .
+
+UBERON:0009709 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0002365 .
+
+UBERON:0009712 rdfs:subClassOf obo:CARO_0000003 .
+
+UBERON:0009713 rdfs:subClassOf obo:CARO_0000003 .
+
+UBERON:0009911 rdfs:subClassOf UBERON:0000063 .
+
+UBERON:0009912 rdfs:subClassOf UBERON:0000063 .
+
+UBERON:0009920 rdfs:subClassOf UBERON:0007530 .
+
+UBERON:0009955 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0002546 .
+
+UBERON:0010009 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0010046 rdfs:subClassOf UBERON:0007524 .
+
+UBERON:0010056 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0003103 .
+
+UBERON:0010059 rdfs:subClassOf UBERON:0002036 .
+
+UBERON:0010083 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0010084 rdfs:subClassOf obo:CARO_0000006 .
+
+UBERON:0010125 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0010133 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0010188 rdfs:subClassOf UBERON:0034944 .
+
+UBERON:0010199 rdfs:subClassOf UBERON:0000466 .
+
+UBERON:0010221 rdfs:subClassOf UBERON:0007524 .
+
+UBERON:0010252 rdfs:subClassOf UBERON:0010259 .
+
+UBERON:0010285 rdfs:subClassOf UBERON:0002020 .
+
+UBERON:0010294 rdfs:subClassOf UBERON:0010291 .
+
+UBERON:0010295 rdfs:subClassOf UBERON:0010291 .
+
+UBERON:0010299 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0010312 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0010314 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0010316 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0010362 rdfs:subClassOf UBERON:0010912 .
+
+UBERON:0010363 rdfs:subClassOf UBERON:0004765 .
+
+UBERON:0010364 rdfs:subClassOf UBERON:0010912 .
+
+UBERON:0010377 rdfs:subClassOf UBERON:0007524 .
+
+UBERON:0010378 rdfs:subClassOf UBERON:0007524 .
+
+UBERON:0010428 rdfs:subClassOf UBERON:0001474 .
+
+UBERON:0010498 rdfs:subClassOf UBERON:0000485 .
+
+UBERON:0010522 rdfs:subClassOf UBERON:0004765 .
+
+UBERON:0010528 rdfs:subClassOf UBERON:0010527 .
+
+UBERON:0010708 rdfs:subClassOf obo:CARO_0000003 .
+
+UBERON:0010709 rdfs:subClassOf obo:CARO_0000003 .
+
+UBERON:0010719 rdfs:subClassOf obo:CARO_0000003 .
+
+UBERON:0010742 rdfs:subClassOf UBERON:0010740 .
+
+UBERON:0010743 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0010912 rdfs:subClassOf UBERON:0011216 .
+
+UBERON:0011004 rdfs:subClassOf UBERON:0003933 .
+
+UBERON:0011120 rdfs:subClassOf UBERON:0002217 .
+
+UBERON:0011134 rdfs:subClassOf UBERON:0000982 .
+
+UBERON:0011137 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0000075 .
+
+UBERON:0011138 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0000075 .
+
+UBERON:0011156 rdfs:subClassOf UBERON:0011158 .
+
+UBERON:0011158 rdfs:subClassOf UBERON:0000075 .
+
+UBERON:0011159 rdfs:subClassOf UBERON:0000075 .
+
+UBERON:0011216 rdfs:subClassOf UBERON:0010000 .
+
+UBERON:0011270 rdfs:subClassOf UBERON:0009569 .
+
+UBERON:0011272 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0000490 .
+
+UBERON:0011582 rdfs:subClassOf obo:CARO_0000003 .
+
+UBERON:0011585 rdfs:subClassOf UBERON:0000061 .
+
+UBERON:0011595 rdfs:subClassOf obo:CARO_0000003 .
+
+UBERON:0011596 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0000490 .
+
+UBERON:0011642 rdfs:subClassOf UBERON:0000490 .
+
+UBERON:0011814 rdfs:subClassOf UBERON:0005085 .
+
+UBERON:0011821 rdfs:subClassOf UBERON:0002384 .
+
+UBERON:0011822 rdfs:subClassOf UBERON:0011821 .
+
+UBERON:0011824 rdfs:subClassOf UBERON:0011822 .
+
+UBERON:0011825 rdfs:subClassOf UBERON:0011821 .
+
+UBERON:0011860 rdfs:subClassOf UBERON:0000476 .
+
+UBERON:0011892 rdfs:subClassOf obo:CARO_0000000,
+        UBERON:0000481 .
+
+UBERON:0011899 rdfs:subClassOf UBERON:0011822 .
+
+UBERON:0011997 rdfs:subClassOf UBERON:0000481 .
+
+UBERON:0012075 rdfs:subClassOf UBERON:0001474,
+        UBERON:0010522 .
+
+UBERON:0012172 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0012332 rdfs:subClassOf UBERON:0000211 .
+
+UBERON:0012375 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0012429 rdfs:subClassOf UBERON:0034769 .
+
+UBERON:0012430 rdfs:subClassOf UBERON:0004923 .
+
+UBERON:0012475 rdfs:subClassOf obo:CARO_0000003 .
+
+UBERON:0012476 rdfs:subClassOf obo:CARO_0000003 .
+
+UBERON:0013686 rdfs:subClassOf UBERON:0000464 .
+
+UBERON:0013700 rdfs:subClassOf obo:CARO_0000003 .
+
+UBERON:0013702 rdfs:subClassOf UBERON:0000475 .
+
+UBERON:0014389 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0014704 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0014705 rdfs:subClassOf UBERON:0000490 .
+
+UBERON:0014903 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0014907 rdfs:subClassOf UBERON:0001981 .
+
+UBERON:0015410 rdfs:subClassOf UBERON:0005178 .
+
+UBERON:0015480 rdfs:subClassOf UBERON:0001193 .
+
+UBERON:0015757 rdfs:subClassOf UBERON:0000479 .
+
+UBERON:0016887 rdfs:subClassOf UBERON:0000481 .
+
+UBERON:0016888 rdfs:subClassOf UBERON:0005423 .
+
+UBERON:0018254 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0018260 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0018544 rdfs:subClassOf obo:CARO_0000003 .
+
+UBERON:0019207 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0020358 rdfs:subClassOf UBERON:0000126 .
+
+UBERON:0022361 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0034706 rdfs:subClassOf UBERON:0034705 .
+
+UBERON:0034707 rdfs:subClassOf UBERON:0034705 .
+
+UBERON:0034769 rdfs:subClassOf UBERON:0015757 .
+
+UBERON:0034878 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0034921 rdfs:subClassOf UBERON:0010000 .
+
+UBERON:0034922 rdfs:subClassOf UBERON:0010000 .
+
+UBERON:0034923 rdfs:subClassOf UBERON:0000465 .
+
+UBERON:0034929 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0035539 rdfs:subClassOf UBERON:0004573 .
+
+UBERON:0035642 rdfs:subClassOf obo:CARO_0001001 .
+
+UBERON:0035804 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0036073 rdfs:subClassOf obo:CARO_0000000 .
+
+UBERON:0036285 rdfs:subClassOf UBERON:0004784 .
+
+UBERON:0036286 rdfs:subClassOf UBERON:0004784 .
+
+UBERON:0036301 rdfs:subClassOf UBERON:0006876 .
+
+UBERON:0036351 rdfs:subClassOf UBERON:0000415 .
+
+UBERON:0036352 rdfs:subClassOf UBERON:0000415 .
+
+UBERON:0036422 rdfs:subClassOf UBERON:0000415 .
+
+UBERON:0036441 rdfs:subClassOf UBERON:0000060 .
+
+UBERON:0036553 rdfs:subClassOf UBERON:0000042 .
+
+UBERON:0036925 rdfs:subClassOf UBERON:0000060 .
+
+UBERON:0037094 rdfs:subClassOf UBERON:0000415 .
+
+UBERON:0037144 rdfs:subClassOf obo:CARO_0000003,
+        UBERON:0000060 .
+
+UBERON:0039856 rdfs:subClassOf UBERON:0001145 .
+
+UBERON:0039857 rdfs:subClassOf UBERON:0001145 .
+
+UBERON:2005260 rdfs:subClassOf UBERON:0001982,
+        UBERON:0004638 .
+
+UBERON:8000009 rdfs:subClassOf UBERON:0010131 .
+
+UBERON:8410050 rdfs:subClassOf obo:CARO_0000000 .
+
+### Serialized using the ttlser deterministic serializer v1.2.1
