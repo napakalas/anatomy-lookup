@@ -426,7 +426,7 @@ class AnatomyLookup:
         elif isinstance(scope, list):
             descendants = set()
             for sc in scope:
-                idx_scope, _, score_scope = self.search(scope)
+                idx_scope, _, score_scope = self.search(sc)
                 if score_scope >= treshold:
                     descendants.update(list(self.get_descendant(idx_scope)))
             if len(descendants) == 0:
