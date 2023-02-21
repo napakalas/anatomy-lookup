@@ -38,29 +38,29 @@ al.update_terms()
 
 ### Lookup with scope
 ```
-al.search_with_scope('1st plantar metatarsal', ['nerve','brain'])
+al.search_with_scope('C1', ['Spinal cord'])
 ```
 results
 ```
-[('http://purl.obolibrary.org/obo/UBERON_0035195',
-  'plantar metatarsal artery',
-  0.7471498250961304),
- ('http://purl.obolibrary.org/obo/UBERON_0003650',
-  'metatarsal bone of digit 1',
-  0.723603367805481),
- ('http://purl.obolibrary.org/obo/UBERON_0001448',
-  'metatarsal bone',
-  0.6906536817550659),
- ('http://purl.obolibrary.org/obo/UBERON_0003652',
-  'metatarsal bone of digit 3',
-  0.6834049224853516),
- ('http://purl.obolibrary.org/obo/UBERON_0003651',
-  'metatarsal bone of digit 2',
-  0.682817816734314)]
+[('http://purl.obolibrary.org/obo/UBERON_0006469',
+  'C1 segment of cervical spinal cord',
+  0.758830189704895),
+ ('http://purl.obolibrary.org/obo/UBERON_0007266',
+  'intervertebral disk of atlas',
+  0.7131606340408325),
+ ('http://purl.obolibrary.org/obo/UBERON_0002828',
+  'ventral cochlear nucleus',
+  0.6487032771110535),
+ ('http://purl.obolibrary.org/obo/UBERON_0006489',
+  'C2 segment of cervical spinal cord',
+  0.5675715208053589),
+ ('http://purl.obolibrary.org/obo/UBERON_0006478',
+  'Brodmann (1909) area 37',
+  0.5620466470718384)]
 ```
 running with force is also available
 ```
-lookup.search_with_scope('1st plantar metatarsal', ['nerve'], force=True)
+al.search_with_scope('C1', ['Spinal cord'], force=True)
 ```
 
 ### Close instance to free resource
@@ -75,7 +75,7 @@ al.build_indexes()
 This will download the latest release of SCKAN from https://github.com/SciCrunch/NIF-Ontology/releases
 an then build the index
 
-### Running annotaation
+### Running annotation
 ```
 from anatomy_lookup import AnatomyAnnotator
 anno = AnatomyAnnotator()
