@@ -139,5 +139,7 @@ rdflib.graph
 spelling_embs.pt
 onto_hierarchy.json
 
+data_log.json
+
 # Retain folder
 !anatomy_lookup/resources/.gitkeep
