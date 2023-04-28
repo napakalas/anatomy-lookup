@@ -134,12 +134,12 @@ dmypy.json
 .LSOverride
 
 # Large file
-onto_embs.pt
-rdflib.graph
-spelling_embs.pt
-onto_hierarchy.json
+# onto_embs.pt
+# onto_hierarchy.json
+# spelling_embs.pt
 
-data_log.json
-
+# rdflib.graph
+anatomy_lookup/resources
+!data_log.json
 # Retain folder
 !anatomy_lookup/resources/.gitkeep
