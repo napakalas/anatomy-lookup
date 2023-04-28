@@ -21,19 +21,21 @@ SCKAN_PICKLE = 'rdflib.graph'
 SPELLING_FILE = 'spelling_embs.pt'
 ONTO_HIERARCHY = 'onto_hierarchy.json'
 DATA_LOG = 'data_log.json'
+BERTModel = 'gsarti/biobert-nli'
+# BERTModel = 'multi-qa-MiniLM-L6-cos-v1'
 
 #===============================================================================
 namespaces = { 
               'UBERON': 'http://purl.obolibrary.org/obo/UBERON_',
               'ILX': 'http://uri.interlex.org/base/ilx_',
              }
-def get_uriref(uri_or_curie:str) -> rdflib.term.URIRef:
+def get_uriref(uri_or_curie:str) -> rdflib.URIRef:
     if 'http' in uri_or_curie:
-        return rdflib.term.URIRef(uri_or_curie)
+        return rdflib.URIRef(uri_or_curie)
     elif ':' in uri_or_curie:
         parts = uri_or_curie.split(':', 1)
         if parts[0] in namespaces:
-            return rdflib.term.URIRef(namespaces[parts[0]] + parts[1])
+            return rdflib.URIRef(namespaces[parts[0]] + parts[1])
 
 def get_uri(curie_or_uriref) -> Optional[str]:
     if str(curie_or_uriref).startswith('http'):
@@ -164,7 +166,7 @@ class AnatomyLookup:
     hierarchy_file = os.path.join(RESOURCE_FOLDER, ONTO_HIERARCHY)
     def __init__(self):
         os.environ["TOKENIZERS_PARALLELISM"] = "false"
-        self.__model = SentenceTransformer('multi-qa-MiniLM-L6-cos-v1')
+        self.__model = SentenceTransformer(BERTModel)
         # checking if the term embeddings available
         # creating folder if not available
         if not os.path.exists(RESOURCE_FOLDER):
@@ -173,8 +175,6 @@ class AnatomyLookup:
 
         # loading term embeddingsz
         self.__load_embedding_file()
-
-
 
     def __load_embedding_file(self):
         self.__onto_ids, self.__onto_labels, self.__onto_embs = torch.load(AnatomyLookup.embs_file)
@@ -251,10 +251,10 @@ class AnatomyLookup:
         terms = []
         ids = []
         labels = {}
-        path = rdflib.util.URIRef(predicates[0])
+        path = rdflib.URIRef(predicates[0])
         if len(predicates) > 1:
             for p in predicates[1:]:
-                path = path | rdflib.util.URIRef(p)
+                path = path | rdflib.URIRef(p)
         for s, o in g.subject_objects(path, unique=True):
             if any([str(s).startswith(ns) for ns in namespaces.values()]):
                 if include_deprecated:
@@ -332,12 +332,14 @@ class AnatomyLookup:
         # loading term embeddings
         self.__load_embedding_file()
 
-    def __get_query_emb(self, query:str, force=False):
+    def __get_query_emb(self, query:str, force=False, refine=True):
         unique_abbr={' g.': ' ganglion'}
         if force:
             for k, v in unique_abbr.items():
                 query = query.replace(k, v)
         query_emb = self.__model.encode(query, show_progress_bar=False,  convert_to_tensor=True)
+        if not refine:
+            return query_emb
         # refine query using available phrases. in a case of misspelling
         cos_scores = util.cos_sim(query_emb, self.__spell_embs)[0]
         top_results = torch.topk(cos_scores, k=1)
@@ -348,11 +350,11 @@ class AnatomyLookup:
         # return emb
         return query_emb
         
-    def search_candidates(self, query:str, k:int, uri_candidates:Optional[list]=None, force=False) -> list[tuple[str, str, float]]:
+    def search_candidates(self, query:str, k:int, uri_candidates:Optional[list]=None, force=False, refine=True) -> list[tuple[str, str, float]]:
         """
         k -> the number of results returned, between 1 and 10
         """
-        query_emb = self.__get_query_emb(query, force=force)
+        query_emb = self.__get_query_emb(query, force=force, refine=refine)
         
         if uri_candidates == None:
             uri_candidates = self.__onto_ids
@@ -411,18 +413,18 @@ class AnatomyLookup:
             return True
         return False
 
-    def search(self, query:str, force=False):
+    def search(self, query:str, force=False, refine=True):
         # searching for ontology term
-        results = self.search_candidates(query, k=1, force=force)
+        results = self.search_candidates(query, k=1, force=force, refine=refine)
         return results[0]
     
-    def search_with_scope(self, query:str, scope: str|list[str], k:int=5, threshold=0.8, force=False):
+    def search_with_scope(self, query:str, scope: str|list[str], k:int=5, threshold=0.8, force=False, refine=True):
         if isinstance(scope, str):
             idx_scope, _, score_scope = self.search(scope)
             if score_scope < threshold:
                 logging.info("Scope is not available, the score lower than 0.8")
                 return []
-            return self.search_candidates(query, k, list(self.get_descendant(idx_scope)), force=force)
+            return self.search_candidates(query, k, list(self.get_descendant(idx_scope)), force=force, refine=refine)
         elif isinstance(scope, list):
             descendants = set()
             for sc in scope:
@@ -448,7 +450,7 @@ class AnatomyAnnotator:
         self.__lookup = AnatomyLookup()
         self.__data = {}
 
-    def annotate(self, data_file:str, search_attr:str, scope_attrs:list, threshold=0.8, force=False):
+    def annotate(self, data_file:str, search_attr:str, scope_attrs:list, threshold=0.8, force=False, refine=True):
         """
         A method to annotate data to ontology terms
         data_file -> usually a json file containing systems, nerves, organs, and ftus
@@ -461,7 +463,7 @@ class AnatomyAnnotator:
 
         for group in data.values():
             for item in tqdm(group):
-                properties = self.__lookup.search(item[search_attr], force=force)
+                properties = self.__lookup.search(item[search_attr], force=force, refine=refine)
                 if properties[2] >= threshold:
                     item['properties'] = {'models': get_curie(properties[0]),
                                           'label': properties[1],
@@ -469,7 +471,7 @@ class AnatomyAnnotator:
                     item['term'] = get_curie(properties[0])
                 elif len(set(scope_attrs)&set(item.keys()))==1:
                     key = list(set(scope_attrs)&set(item.keys()))[0]
-                    l_props = self.__lookup.search_with_scope(item[search_attr],item[key], force=force)
+                    l_props = self.__lookup.search_with_scope(item[search_attr],item[key], force=force, refine=refine)
                     if len(l_props) > 0:
                         item['suggestions'] = []
                         for properties in l_props:
@@ -657,7 +659,7 @@ class AnatomyValidator:
             (rdflib.RDFS.subClassOf|rdflib.OWL.someValuesFrom)*rdflib.paths.ZeroOrMore,
             #  rdflib.RDFS.subClassOf*rdflib.paths.ZeroOrMore,
             ]
-        ancestors =  [list(self.__graph.objects(rdflib.term.URIRef(uri), path)) for path in paths]
+        ancestors =  [list(self.__graph.objects(rdflib.URIRef(uri), path)) for path in paths]
         ancestors = set([str(a) for anc in ancestors for a in anc if any([ns in str(a) for ns in namespaces.values()])])
         return self.__lookup.search_candidates(parent_term, k, list(ancestors))
 
