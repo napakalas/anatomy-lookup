@@ -26,9 +26,20 @@ BERTModel = 'gsarti/biobert-nli'
 
 #===============================================================================
 namespaces = { 
-              'UBERON': 'http://purl.obolibrary.org/obo/UBERON_',
-              'ILX': 'http://uri.interlex.org/base/ilx_',
-             }
+    'UBERON': 'http://purl.obolibrary.org/obo/UBERON_',
+    'ILX': 'http://uri.interlex.org/base/ilx_',
+    # 'BFO': 'http://purl.obolibrary.org/obo/BFO_',
+    # 'CHEBI': 'http://purl.obolibrary.org/obo/CHEBI_',
+    # 'CL': 'http://purl.obolibrary.org/obo/CL_',
+    # 'GO': 'http://purl.obolibrary.org/obo/GO_',
+    # 'NCBITaxon': 'http://purl.obolibrary.org/obo/NCBITaxon_',
+    # 'NBO': 'http://purl.obolibrary.org/obo/NBO_',
+    # 'PATO': 'http://purl.obolibrary.org/obo/PATO_',
+    # 'PR': 'http://purl.obolibrary.org/obo/PR_',
+    # 'CARO': 'http://purl.obolibrary.org/obo/CARO_',
+    # 'FMA': 'http://purl.org/sig/ont/fma/fma'
+}
+
 def get_uriref(uri_or_curie:str) -> rdflib.URIRef:
     if 'http' in uri_or_curie:
         return rdflib.URIRef(uri_or_curie)
@@ -117,7 +128,7 @@ def get_SCKAN_graph(file_path: Optional[str]=None):
     
     import pickle            
     # checking ttl file availability
-    if file_path != None:
+    if file_path is not None:
         graph_path = os.path.join(file_path, SCKAN_PICKLE)
         if os.path.exists(graph_path):
             try:
@@ -125,7 +136,7 @@ def get_SCKAN_graph(file_path: Optional[str]=None):
                 with open(graph_path, 'rb') as f:
                     g = pickle.load(f)
                 return g
-            except:
+            except Exception:
                 logging.warning('failed loading rdf graph pickle')
 
         filenames = __get_ttl(file_path)[0]
@@ -134,7 +145,7 @@ def get_SCKAN_graph(file_path: Optional[str]=None):
             logging.warning('The provided path does not contain ttl file')
 
     # downloading SCKAN if file_path=None
-    if file_path==None:
+    if file_path is None:
         file_path = __download_latest_SCKAN()
         graph_path = os.path.join(file_path, SCKAN_PICKLE)
     
@@ -184,16 +195,33 @@ class AnatomyLookup:
 
     def build_indexes(self, file_path:Optional[str]=None):
         """
-        Building UBERON and ILX term embedding
+        Building UBERON and ILX term embedding -> (now try to cover all classes, not just UBERON and ILX)
         file_path = directory containing ttl files, if none, will be downloaded from repository
         The files can be obtained from https://github.com/SciCrunch/NIF-Ontology/releases
         """
 
         g = get_SCKAN_graph(file_path)
 
-        # getting UBERON and ILX terms with label predicate
+        # getting ontology terms with label predicate
         predicates = ['http://www.w3.org/2000/01/rdf-schema#label']
         onto_terms, onto_ids, onto_labels = self.__get_terms(g, predicates)
+
+        # getting ontology terms labelr as annotations, usually for ILX
+        sparql = """
+            SELECT DISTINCT ?s ?o {
+                ?s <https://apinatomy.org/uris/readable/annotates>[
+                    rdfs:label ?o;
+                    rdf:type <https://apinatomy.org/uris/elements/Material>
+                ]
+        }
+        """
+        qres = g.query(sparql)
+        for row in qres:
+            if any([ns in str(row.s) for ns in namespaces.values()]):
+                if str(row.s) not in onto_labels:
+                    onto_terms += [str(row.o)]
+                    onto_ids += [str(row.s)]
+                    onto_labels[str(row.s)] = [str(row.o)]
 
         # getting terms with exact synonym predicate
         predicates = ['http://www.geneontology.org/formats/oboInOwl#hasExactSynonym']
@@ -247,14 +275,17 @@ class AnatomyLookup:
         # loading term embeddings
         self.__load_embedding_file()
 
-    def __get_terms(self, g:rdflib.Graph, predicates:list, duplicate_check=False, include_deprecated=False):
+    def __get_terms(self, g:rdflib.Graph, predicates:list, duplicate_check=False, include_deprecated=False, predicate_con='|'):
         terms = []
         ids = []
         labels = {}
         path = rdflib.URIRef(predicates[0])
         if len(predicates) > 1:
             for p in predicates[1:]:
-                path = path | rdflib.URIRef(p)
+                if predicate_con == '|':
+                    path = path | rdflib.URIRef(p)
+                elif predicate_con == '/':
+                    path = path / rdflib.URIRef(p)
         for s, o in g.subject_objects(path, unique=True):
             if any([str(s).startswith(ns) for ns in namespaces.values()]):
                 if include_deprecated:
