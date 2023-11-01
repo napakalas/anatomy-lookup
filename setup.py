@@ -3,7 +3,7 @@ from setuptools import setup
 setup(
 
     name='anatomy-lookup',
-    version='0.0.3',
+    version='0.0.4',
     description='Anatomy lookup for UBERON and ILX',
     url='http://github.com/napakalas/anatomy-lookup',
     author='Yuda Munarko',
