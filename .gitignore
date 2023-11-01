@@ -140,6 +140,6 @@ dmypy.json
 
 # rdflib.graph
 anatomy_lookup/resources
-!data_log.json
 # Retain folder
 !anatomy_lookup/resources/.gitkeep
+!anatomy_lookup/resources/data_log.json
