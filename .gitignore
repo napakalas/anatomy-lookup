@@ -134,12 +134,9 @@ dmypy.json
 .LSOverride
 
 # Large file
-# onto_embs.pt
-# onto_hierarchy.json
-# spelling_embs.pt
-
-# rdflib.graph
-anatomy_lookup/resources/release
 onto_embs.pt
 onto_hierarchy.json
 spelling_embs.pt
+
+# rdflib.graph
+anatomy_lookup/resources/release
