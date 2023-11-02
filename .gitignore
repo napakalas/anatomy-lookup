@@ -139,7 +139,7 @@ dmypy.json
 # spelling_embs.pt
 
 # rdflib.graph
-anatomy_lookup/resources
-# Retain folder
-!anatomy_lookup/resources/.gitkeep
-!anatomy_lookup/resources/data_log.json
+anatomy_lookup/resources/release
+onto_embs.pt
+onto_hierarchy.json
+spelling_embs.pt
