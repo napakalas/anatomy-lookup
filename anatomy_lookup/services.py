@@ -168,6 +168,7 @@ class AnatomyLookup:
     embs_file = os.path.join(RESOURCE_FOLDER, EMBEDDING_FILE)
     spell_file = os.path.join(RESOURCE_FOLDER, SPELLING_FILE)
     hierarchy_file = os.path.join(RESOURCE_FOLDER, ONTO_HIERARCHY)
+
     def __init__(self):
         os.environ["TOKENIZERS_PARALLELISM"] = "false"
         self.__model = SentenceTransformer(BERTModel, device='cpu')
@@ -324,7 +325,7 @@ class AnatomyLookup:
         else:
             data_log = {"version": 0, "published_at":""}
         # check current data
-        if data_log['version'] == 0:
+        if not os.path.exists(AnatomyLookup.embs_file):
             # download term embeddings
             logging.warning(" Term embeddings are not available.")
             self.update_terms()
