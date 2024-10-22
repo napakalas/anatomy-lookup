@@ -1,4 +1,4 @@
-from anatomy_lookup import AnatomyLookup, get_uriref, get_uri
+from anatomy_lookup import AnatomyLookup
 
 if __name__ == '__main__':
     lookup = AnatomyLookup()
