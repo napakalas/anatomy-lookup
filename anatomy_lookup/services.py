@@ -392,6 +392,8 @@ class AnatomyLookup:
         if uri_candidates == None:
             uri_candidates = self.__onto_ids
         
+        uri_candidates = [get_uri(c) for c in uri_candidates]
+
         cos_scores = util.cos_sim(query_emb, self.__onto_embs)[0]
         
         k = k if len(uri_candidates) > k else len(uri_candidates)       # type: ignore
@@ -404,13 +406,14 @@ class AnatomyLookup:
             url = self.__onto_ids[idx.item()]
             if url not in record:
                 if url in uri_candidates:
-                    results += [(url, self.__onto_labels[url], score.item())]
+                    results += [(get_curie(url), self.__onto_labels[url], score.item())]
                     record.update([url])
             if len(record) == k:
                 break
         return results
 
-    def __get_parent_or_children(self, idx, is_parent:bool):
+    def __get_parent_or_children(self, idx, is_parent:bool, expand:bool):
+        idx = get_uri(idx)
         if is_parent:
             get_type = 'parents'
         elif is_parent==False:
