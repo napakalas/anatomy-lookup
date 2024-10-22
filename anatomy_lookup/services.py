@@ -187,14 +187,17 @@ class AnatomyLookup:
         with open(AnatomyLookup.hierarchy_file, 'r') as fp:
             self.__onto_hierarchy = json.load(fp)
 
-    def build_indexes(self, file_path:Optional[str]=None):
+    def build_indexes(self, sckan_release:Optional[str]=None):
         """
         Building UBERON and ILX term embedding -> (now try to cover all classes, not just UBERON and ILX)
-        file_path = directory containing ttl files, if none, will be downloaded from repository
+        sckan_release = SCKAN release to be dowloaded from repository
         The files can be obtained from https://github.com/SciCrunch/NIF-Ontology/releases
         """
 
-        g = get_SCKAN_graph(file_path)
+        g = get_SCKAN_graph(sckan_release)
+
+        if g is None:
+            return
 
         # getting ontology terms with label predicate
         predicates = ['http://www.w3.org/2000/01/rdf-schema#label']
