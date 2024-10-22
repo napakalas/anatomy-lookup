@@ -64,13 +64,31 @@ def get_curie(uri_or_uriref) -> Optional[str]:
 
 #===============================================================================
 
-def __download_latest_SCKAN():
+def __download_latest_SCKAN(sckan_release=None):
     import tarfile
     import zipfile
     import shutil
-    # getting the latest release from SCKAN repository
-    releases = requests.get(SCKAN_RELEASE)
-    selected_release = max(releases.json(), key=lambda x:x['published_at'])
+
+    releases = requests.get(SCKAN_RELEASE, timeout=10)
+    selected_release = None
+
+    # select SCKAN release based on sckan_release or the most recent release
+    if sckan_release:
+        for release in releases.json():
+            if release['tag_name'] == sckan_release:
+                selected_release = release
+
+    if not sckan_release: # getting the latest release from SCKAN repository
+        selected_release = max(releases.json(), key=lambda x:x['published_at'])
+        sckan_release = selected_release['tag_name']
+
+    # stop when selectedrelease is not identified
+    if selected_release is None:
+        import sys
+        sys.exit()
+
+    # log selected release
+    logging.info(f"The extracted SCKAN version is {sckan_release}")
     
     # selecting asset to be dowloaded
     file_url = next((asset['browser_download_url'] for asset in selected_release['assets'] 
@@ -124,30 +142,9 @@ def __get_ttl(path):
                 other_files += [np]
     return [ttl_files, other_files]
 
-def get_SCKAN_graph(file_path: Optional[str]=None):
-    
-    import pickle            
-    # checking ttl file availability
-    if file_path is not None:
-        graph_path = os.path.join(file_path, SCKAN_PICKLE)
-        if os.path.exists(graph_path):
-            try:
-                logging.info('rdf graph pickle is found, loading ...')
-                with open(graph_path, 'rb') as f:
-                    g = pickle.load(f)
-                return g
-            except Exception:
-                logging.warning('failed loading rdf graph pickle')
-
-        filenames = __get_ttl(file_path)[0]
-        if len(filenames) == 0:
-            file_path = None
-            logging.warning('The provided path does not contain ttl file')
-
+def get_SCKAN_graph(sckan_release: Optional[str]=None):
     # downloading SCKAN if file_path=None
-    if file_path is None:
-        file_path = __download_latest_SCKAN()
-        graph_path = os.path.join(file_path, SCKAN_PICKLE)
+    file_path = __download_latest_SCKAN(sckan_release)
     
     # getting all ttl files
     filenames = __get_ttl(file_path)[0]
