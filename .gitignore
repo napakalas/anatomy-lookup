@@ -137,6 +137,7 @@ dmypy.json
 onto_embs.pt
 onto_hierarchy.json
 spelling_embs.pt
+data_log.json
 
 # rdflib.graph
 anatomy_lookup/resources/release
