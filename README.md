@@ -1,20 +1,26 @@
 # anatomy-lookup
+
 Ontology lookup to UBERON and ILX
 
 ### Install
+
 Install from the latest release, for example:
+
 ```
-pip install https://github.com/napakalas/anatomy-lookup/releases/download/v0.0.3/anatomy_lookup-0.0.3-py3-none-any.whl
+pip install https://github.com/napakalas/anatomy-lookup/releases/download/v0.0.6/anatomy_lookup-0.0.6-py3-none-any.whl
 ```
 
 ### Lookup use
+
 ```python
 from anatomy_lookup import AnatomyLookup
 
 al = AnatomyLookup()
 al.search('nasophayrnx')
 ```
+
 results
+
 ```
 ('http://purl.obolibrary.org/obo/UBERON_0001728',
  'nasopharynx',
@@ -22,10 +28,13 @@ results
 ```
 
 can use force
+
 ```
 al.search('cochlear g.', force=True)
 ```
+
 results
+
 ```
 ('http://purl.obolibrary.org/obo/UBERON_0000395',
  'cochlear ganglion',
@@ -33,15 +42,19 @@ results
 ```
 
 ### Update UBERON and ILX terms
+
 ```
 al.update_terms()
 ```
 
 ### Lookup with scope
+
 ```
 al.search_with_scope('C1', ['Spinal cord'])
 ```
+
 results
+
 ```
 [('http://purl.obolibrary.org/obo/UBERON_0006469',
   'C1 segment of cervical spinal cord',
@@ -59,40 +72,50 @@ results
   'Brodmann (1909) area 37',
   0.5620466470718384)]
 ```
+
 running with force is also available
+
 ```
 al.search_with_scope('C1', ['Spinal cord'], force=True)
 ```
 
 ### Close instance to free resource
+
 ```python
 al.close()
 ```
 
-###  Rebuild term embedding
+### Rebuild term embedding
+
 ```python
 al.build_indexes()
 ```
+
 This will download the latest release of SCKAN from https://github.com/SciCrunch/NIF-Ontology/releases
 an then build the index
 
 ### Running annotation
+
 ```
 from anatomy_lookup import AnatomyAnnotator
 anno = AnatomyAnnotator()
 anno.annotate('annotation.json','name', ['systems', 'organ'])
 ```
+
 can use force also
+
 ```
 anno.annotate('annotation.json','name', ['systems', 'organ'], force=True)
 ```
 
 ### Save to xlsx
+
 ```
 anno.save_to_xlsx('annotation_test.xlsx')
 ```
 
 ### Save to json
+
 ```
 anno.save_to_json('annotation_test.json')
 ```
