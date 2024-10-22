@@ -317,8 +317,12 @@ class AnatomyLookup:
             json.dump(ids, fp)
 
     def __check_current_term_files(self):
-        with open(os.path.join(RESOURCE_FOLDER, DATA_LOG), 'r') as fp:
-            data_log = json.load(fp)
+
+        if os.path.exists(file_log:=os.path.join(RESOURCE_FOLDER, DATA_LOG)):
+            with open(file_log, 'r') as fp:
+                data_log = json.load(fp)
+        else:
+            data_log = {"version": 0, "published_at":""}
         # check current data
         if data_log['version'] == 0:
             # download term embeddings
@@ -345,15 +349,16 @@ class AnatomyLookup:
         for file_url in response['files']:
             # downloading the file
             logging.warning(" ... downloading from server: " + file_url['name'])
-            r = requests.get(file_url['download_url'])
+            r = requests.get(file_url['download_url'], timeout=10)
             save_to = os.path.join(RESOURCE_FOLDER, file_url['name'])
             with open(save_to, 'wb') as f:
                 f.write(r.content)
         
         # save to log
-        with open(os.path.join(RESOURCE_FOLDER, DATA_LOG), 'r') as fp:
-            data_log = json.load(fp)
-        data_log['version'] = response['version']
+        data_log = {
+            'version': response['version'],
+            'published_at': response['timeline']['posted']
+        }
         with open(os.path.join(RESOURCE_FOLDER, DATA_LOG), 'w') as fp:
             json.dump(data_log, fp)
 
