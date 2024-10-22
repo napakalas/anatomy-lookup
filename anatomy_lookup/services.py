@@ -700,9 +700,6 @@ class AnatomyValidator:
         ancestors =  [list(self.__graph.objects(rdflib.URIRef(uri), path)) for path in paths]
         ancestors = set([str(a) for anc in ancestors for a in anc if any([ns in str(a) for ns in namespaces.values()])])
         return self.__lookup.search_candidates(parent_term, k, list(ancestors))
-
-    
-    
     def save(self):
         pass
 
