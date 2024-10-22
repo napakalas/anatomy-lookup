@@ -457,7 +457,7 @@ class AnatomyLookup:
         results = self.search_candidates(query, k=1, force=force, refine=refine)
         return results[0]
     
-    def search_with_scope(self, query:str, scope: str|list[str], k:int=5, scope_context=0.8, force=False, refine=True):
+    def search_with_scope(self, query:str, scope: str|list[str], k:int=5, scope_context=0.7, force=False, refine=True):
         query_embs = [self.__get_query_emb(query, force=force, refine=refine)]
         if isinstance(scope, str):
             scope = [scope]
