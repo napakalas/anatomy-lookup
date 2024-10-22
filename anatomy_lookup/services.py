@@ -93,7 +93,7 @@ def __download_latest_SCKAN(sckan_release=None):
     # selecting asset to be dowloaded
     file_url = next((asset['browser_download_url'] for asset in selected_release['assets'] 
                         if SCKAN_ASSET in asset['browser_download_url'].split('/')[-1]), None)
-    file_url = file_url if file_url != None else selected_release['zipball_url']
+    file_url = file_url if file_url is not  None else selected_release['zipball_url']
     file_path = os.path.join(RESOURCE_FOLDER, file_url.split('/')[-1])
     logging.info('Downloading SCKAN file from:', file_url)
     r = requests.get(file_url)
