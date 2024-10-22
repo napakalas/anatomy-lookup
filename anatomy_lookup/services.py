@@ -182,8 +182,8 @@ class AnatomyLookup:
 
     def __load_embedding_file(self):
         device = torch.device('cpu')
-        self.__onto_ids, self.__onto_labels, self.__onto_embs = torch.load(AnatomyLookup.embs_file, device)
-        self.__spell_phrases, self.__spell_embs = torch.load(AnatomyLookup.spell_file, device)
+        self.__onto_ids, self.__onto_labels, self.__onto_embs = torch.load(AnatomyLookup.embs_file, device, weights_only=True)
+        self.__spell_phrases, self.__spell_embs = torch.load(AnatomyLookup.spell_file, device, weights_only=True)
         with open(AnatomyLookup.hierarchy_file, 'r') as fp:
             self.__onto_hierarchy = json.load(fp)
 
