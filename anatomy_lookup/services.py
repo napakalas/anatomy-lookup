@@ -170,7 +170,7 @@ class AnatomyLookup:
     hierarchy_file = os.path.join(RESOURCE_FOLDER, ONTO_HIERARCHY)
     def __init__(self):
         os.environ["TOKENIZERS_PARALLELISM"] = "false"
-        self.__model = SentenceTransformer(BERTModel)
+        self.__model = SentenceTransformer(BERTModel, device='cpu')
         # checking if the term embeddings available
         # creating folder if not available
         if not os.path.exists(RESOURCE_FOLDER):
@@ -181,8 +181,9 @@ class AnatomyLookup:
         self.__load_embedding_file()
 
     def __load_embedding_file(self):
-        self.__onto_ids, self.__onto_labels, self.__onto_embs = torch.load(AnatomyLookup.embs_file)
-        self.__spell_phrases, self.__spell_embs = torch.load(AnatomyLookup.spell_file)
+        device = torch.device('cpu')
+        self.__onto_ids, self.__onto_labels, self.__onto_embs = torch.load(AnatomyLookup.embs_file, device)
+        self.__spell_phrases, self.__spell_embs = torch.load(AnatomyLookup.spell_file, device)
         with open(AnatomyLookup.hierarchy_file, 'r') as fp:
             self.__onto_hierarchy = json.load(fp)
 
