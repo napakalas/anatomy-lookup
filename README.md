@@ -7,7 +7,7 @@ Ontology lookup to UBERON and ILX
 Install from the latest release, for example:
 
 ```
-pip install https://github.com/napakalas/anatomy-lookup/releases/download/v0.0.7/anatomy_lookup-0.0.7-py3-none-any.whl
+pip install https://github.com/napakalas/anatomy-lookup/releases/download/v0.0.8/anatomy_lookup-0.0.8-py3-none-any.whl
 ```
 
 ### Lookup use
@@ -56,21 +56,11 @@ al.search_with_scope('C1', ['Spinal cord'])
 results
 
 ```
-[('http://purl.obolibrary.org/obo/UBERON_0006469',
-  'C1 segment of cervical spinal cord',
-  0.758830189704895),
- ('http://purl.obolibrary.org/obo/UBERON_0007266',
-  'intervertebral disk of atlas',
-  0.7131606340408325),
- ('http://purl.obolibrary.org/obo/UBERON_0002828',
-  'ventral cochlear nucleus',
-  0.6487032771110535),
- ('http://purl.obolibrary.org/obo/UBERON_0006489',
-  'C2 segment of cervical spinal cord',
-  0.5675715208053589),
- ('http://purl.obolibrary.org/obo/UBERON_0006478',
-  'Brodmann (1909) area 37',
-  0.5620466470718384)]
+[('UBERON:0006469', 'C1 segment of cervical spinal cord', 0.9242348670959473),
+ ('UBERON:0002240', 'spinal cord', 0.9151925444602966),
+ ('UBERON:0003099', 'cranial neural crest', 0.8896005749702454),
+ ('ILX:0794592', 'C1 spinal nerve', 0.886608362197876),
+ ('UBERON:0005844', 'spinal cord segment', 0.8802721500396729)]
 ```
 
 running with force is also available

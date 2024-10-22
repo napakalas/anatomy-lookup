@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "anatomy-lookup"
-version = "0.0.7"
+version = "0.0.8"
 description = "Anatomy lookup for UBERON and ILX"
 authors = ["Yuda Munarko <yuda.munarko@gmail.com>"]
 repository = "http://github.com/napakalas/anatomy-lookup"
