@@ -157,12 +157,8 @@ def get_SCKAN_graph(sckan_release: Optional[str]=None):
     for filename in tqdm(filenames):
         try:
             g.parse(filename)
-        except:
-            logging.error('Cannot load file: {}'.format(filename))
-    
-    # saving graph to pickle for further reuse
-    with open(graph_path, 'wb') as f:
-        pickle.dump(g, f)
+        except Exception as e:
+            logging.error(f'{e} - Cannot load file: {filename}')
 
     return g
 
