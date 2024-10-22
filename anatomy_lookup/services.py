@@ -112,7 +112,7 @@ def __download_latest_SCKAN(sckan_release=None):
     # extracting zip or tar.gz file
     if file_path.endswith('tar.gz'):
         arc_file = tarfile.open(file_path, 'r:gz')
-    elif file_path.endswith('zip'):
+    else:
         arc_file = zipfile.ZipFile(file_path, 'r')
     arc_file.extractall(extracted_path)
     arc_file.close()
