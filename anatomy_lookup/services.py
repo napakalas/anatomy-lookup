@@ -437,10 +437,10 @@ class AnatomyLookup:
         return {get_curie(line) for line in lines}
 
     def get_descendant(self, uri):
-        return self.__get_parent_or_children(uri, is_parent=False)
+        return self.__get_parent_or_children(uri, is_parent=False, expand=False)
 
     def get_ancestor(self, uri):
-        return self.__get_parent_or_children(uri, is_parent=True)
+        return self.__get_parent_or_children(uri, is_parent=True, expand=False)
 
     def is_uri_connected(self, uri1, uri2) -> bool:
         """
