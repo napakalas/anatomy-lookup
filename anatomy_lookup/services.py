@@ -680,7 +680,7 @@ class AnatomyAnnotator:
 class AnatomyValidator:
     
     def __init__(self):
-        self.__graph = get_SCKAN_graph(os.path.join(RESOURCE_FOLDER, SCKAN_ASSET))
+        self.__graph = get_SCKAN_graph()
         self.__lookup = AnatomyLookup()
         
     def is_uri_linked(self, uri1, uri2) -> bool:
