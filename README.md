@@ -7,7 +7,7 @@ Ontology lookup to UBERON and ILX
 Install from the latest release, for example:
 
 ```
-pip install https://github.com/napakalas/anatomy-lookup/releases/download/v0.0.6/anatomy_lookup-0.0.6-py3-none-any.whl
+pip install https://github.com/napakalas/anatomy-lookup/releases/download/v0.0.7/anatomy_lookup-0.0.7-py3-none-any.whl
 ```
 
 ### Lookup use
