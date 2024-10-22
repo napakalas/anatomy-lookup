@@ -396,9 +396,8 @@ class AnatomyLookup:
 
         cos_scores = util.cos_sim(query_emb, self.__onto_embs)[0]
         
-        k = k if len(uri_candidates) > k else len(uri_candidates)       # type: ignore
-        k = 10 if k>10 else k
-        top_results = torch.topk(cos_scores, k=100)
+        top_results = torch.topk(cos_scores, k=k*2)
+        k = k if len(uri_candidates) > k else len(uri_candidates)
         
         results = []
         record = set()
