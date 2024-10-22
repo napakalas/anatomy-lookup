@@ -384,7 +384,7 @@ class AnatomyLookup:
         # return emb
         return query_emb
         
-    def search_candidates(self, query:str, k:int, uri_candidates:Optional[list]=None, force=False, refine=True) -> list[tuple[str, str, float]]:
+    def search_candidates(self, query:str, k:int=5, uri_candidates:Optional[list]=None, force=False, refine=True) -> list[tuple[str, str, float]]:
         """
         k -> the number of results returned, between 1 and 10
         """
@@ -397,7 +397,7 @@ class AnatomyLookup:
 
         cos_scores = util.cos_sim(query_emb, self.__onto_embs)[0]
         
-        top_results = torch.topk(cos_scores, k=k*2)
+        top_results = torch.topk(cos_scores, k=1000)
         k = k if len(uri_candidates) > k else len(uri_candidates)
         
         results = []
@@ -457,23 +457,28 @@ class AnatomyLookup:
         results = self.search_candidates(query, k=1, force=force, refine=refine)
         return results[0]
     
-    def search_with_scope(self, query:str, scope: str|list[str], k:int=5, threshold=0.8, force=False, refine=True):
+    def search_with_scope(self, query:str, scope: str|list[str], k:int=5, scope_context=0.8, force=False, refine=True):
+        query_embs = [self.__get_query_emb(query, force=force, refine=refine)]
         if isinstance(scope, str):
-            idx_scope, _, score_scope = self.search(scope)
-            if score_scope < threshold:
-                logging.info("Scope is not available, the score lower than 0.8")
-                return []
-            return self.search_candidates(query, k, list(self.get_descendant(idx_scope)), force=force, refine=refine)
-        elif isinstance(scope, list):
-            descendants = set()
-            for sc in scope:
-                idx_scope, _, score_scope = self.search(sc)
-                if score_scope >= threshold:
-                    descendants.update(list(self.get_descendant(idx_scope)))
-            if len(descendants) == 0:
-                logging.info("Scope is not available, the score lower than 0.8")
-                return []
-            return self.search_candidates(query, k, list(descendants), force=force)
+            scope = [scope]
+        for sc in scope:
+            query_embs += [self.__get_query_emb(sc, force=force, refine=refine) * scope_context]
+
+        query_emb = torch.mean(torch.stack(query_embs), dim=0)
+        cos_scores = util.cos_sim(query_emb, self.__onto_embs)[0]
+        top_results = torch.topk(cos_scores, k=1000)
+
+        results = []
+        record = set()
+        for score, idx in zip(top_results[0], top_results[1]):
+            url = self.__onto_ids[idx.item()]
+            if url not in record:
+                if url in self.__onto_ids:
+                    results += [(get_curie(url), self.__onto_labels[url], score.item())]
+                    record.update([url])
+            if len(record) == k:
+                break
+        return results
 
     def close(self):
         os.environ["TOKENIZERS_PARALLELISM"] = "false"
