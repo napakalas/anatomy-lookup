@@ -389,7 +389,7 @@ class AnatomyLookup:
         """
         query_emb = self.__get_query_emb(query, force=force, refine=refine)
         
-        if uri_candidates == None:
+        if uri_candidates is None:
             uri_candidates = self.__onto_ids
         
         uri_candidates = [get_uri(c) for c in uri_candidates]
@@ -416,7 +416,7 @@ class AnatomyLookup:
         idx = get_uri(idx)
         if is_parent:
             get_type = 'parents'
-        elif is_parent==False:
+        elif is_parent is False:
             get_type = 'children'
             
         lines = set()
