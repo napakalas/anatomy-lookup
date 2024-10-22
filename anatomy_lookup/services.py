@@ -422,16 +422,19 @@ class AnatomyLookup:
         lines = set()
         if idx in self.__onto_hierarchy:
             attaches = self.__onto_hierarchy[idx][get_type]
-            while True:
+            if expand:
+                while True:
+                    lines.update(attaches)
+                    tmp_lines = set()
+                    for attach in attaches:
+                        tmp_lines.update(self.__onto_hierarchy[attach][get_type])
+                    tmp_lines = tmp_lines-lines
+                    if len(tmp_lines)==0:
+                        return lines
+                    attaches = tmp_lines
+            else:
                 lines.update(attaches)
-                tmp_lines = set()
-                for attach in attaches:
-                    tmp_lines.update(self.__onto_hierarchy[attach][get_type])
-                tmp_lines = tmp_lines-lines
-                if len(tmp_lines)==0:
-                    return lines
-                attaches = tmp_lines
-        return lines
+        return {get_curie(line) for line in lines}
 
     def get_descendant(self, uri):
         return self.__get_parent_or_children(uri, is_parent=False)
